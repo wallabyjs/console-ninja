@@ -67,7 +67,9 @@ To integrate with supported tools seamlessly, Console Ninja patches your locally
 
 Console Ninja also does its best to detect if you are running your tool in production mode (by checking CLI flags and process environment variables). In the case when production mode is detected, the tool will not modify your built app code even if Console Ninja is running. However, in the (unlikely) case if you are running production builds on your local dev computer and are deploying or sharing those local builds outside of your machine, we recommend to run Console Ninja `Pause` command in your editor prior to running the build to guarantee that no instrumented code ends up in the build. 
 
-Console Ninja instrumentation is limited to send runtime values for `console.log` and errors to your locally running editor only (`localhost` hosted websocket server), the runtime data from your app is never sent outside of your local machine. If the code of your app instrumented by Console Ninja is used outside of your local machine for some reason, it will fail to connect to `localhost` without any notifications visible for the app end users and should not stop your app from working.
+Console Ninja instrumentation is limited to send runtime values for `console.log` and errors to your locally running editor only (`localhost` hosted websocket server), the runtime data from your app is never sent outside of your local machine. If the code of your app instrumented by Console Ninja is used outside of your local machine for some reason: 
+- in browser, it will simply do nothing if the app host is not `localhost`.
+- in node, it will fail to connect to `localhost` and should not stop your app from working.
 
 ## Difference between Console Ninja and other tools
 
