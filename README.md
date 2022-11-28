@@ -49,7 +49,26 @@ TODO image
 
 ### Log viewer
 
-TODO
+Using the `Show Output` command displays Console Ninja log viewer. The viewer shows all recorded logs and errors from your running application in a chronological order with newer entries at the bottom.
+
+Each dispalyed entry row contains a short preview and can be expanded (via mouse or `Arrow Right` keyboard key after it is focussed) to inspect its details. Once the details are expanded, `Enter` keyboard key can be used to enter the details keyborad selection/navigation mode and `Esc` key can be used to exit the mode.
+
+Each entry preview and expanded error entry details contain clickable links to the target source code.
+
+The following keyboard shortcuts are supported for faster navigation:
+- `Arrow Up` and `Arrow Down` to navigate to the next/previous displayed entry.
+- `Home` and `End` to navigate to the first/last displayed entry.
+- `Arrow Left` to collapse focussed entry details and `Ctrl/Cmd + Arrow Left` to collapse all expanded entries details.
+
+Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
+
+- `Clear all output` from Console Ninja, including inline output (double `Esc`);
+- `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed down and file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
+- `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, the auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
+
+Log viewer also supports search available via `Ctrl/Cmd + F` keyboard shortcut.
+
+TODO image
 
 ## Troubleshooting
 
