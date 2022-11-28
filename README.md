@@ -49,7 +49,7 @@ TODO image
 
 ### Log viewer
 
-Using the `Show Output` command displays Console Ninja log viewer. The viewer shows all recorded logs and errors from your running application in a chronological order with newer entries at the bottom.
+Using the `Show Output` command displays Console Ninja log viewer. The viewer shows all recorded logs and errors from your running application in a chronological order with newer entries at the bottom. When the command is triggered on a line with some `console.log` result, the last recorded log entry is focussed in the log viewer.
 
 Each dispalyed entry row contains a short preview and can be expanded (via mouse or `Arrow Right` keyboard key after it is focussed) to inspect its details. Once the details are expanded, `Enter` keyboard key can be used to enter the details keyborad selection/navigation mode and `Esc` key can be used to exit the mode.
 
@@ -80,9 +80,11 @@ The status popup information explains the current state of the tool and provides
 
 ## How does it work
 
-Console Ninja integrates with locally installed tools that are building/preparing your code, and instruments it before it gets to the runtime (browser or node process that runs the code).
+Console Ninja integrates with locally installed tools that are building/preparing your code, and instruments the code before it gets to the runtime (browser or node process that runs the code).
 
 To integrate with supported tools seamlessly, Console Ninja patches your locally installed node modules. When you stop Console Ninja in the editor with the `Pause` command, all made patches are undone.
+
+TODO yarn
 
 Console Ninja also does its best to detect if you are running your tool in production mode (by checking CLI flags and process environment variables). In the case when production mode is detected, the tool will not modify your built app code even if Console Ninja is running. However, in the (unlikely) case if you are running production builds on your local dev computer and are deploying or sharing those local builds outside of your machine, we recommend to run Console Ninja `Pause` command in your editor prior to running the build to guarantee that no instrumented code ends up in the build. 
 
