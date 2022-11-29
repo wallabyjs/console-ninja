@@ -46,6 +46,7 @@ Console Ninja is designed to seamlessly fit into typical dev workflows. After yo
 At this point, you should be able to see the logs (and errors, if any) in your editor, next to the relevant line of code. Hovering over the line displays more detailed view of a log entry/error. Using the `Show Output` command displays the aggregated view to explore logged values and navigate between logs and code.
 
 TODO image
+TODO image for error
 
 ### Log viewer
 
@@ -53,7 +54,7 @@ Using the `Show Output` command displays Console Ninja log viewer. The viewer sh
 
 Each dispalyed entry row contains a short preview and can be expanded (via mouse or `Arrow Right` keyboard key after it is focussed) to inspect its details. Once the details are expanded, `Enter` keyboard key can be used to enter the details keyborad selection/navigation mode and `Esc` key can be used to exit the mode.
 
-Each entry preview and expanded error entry details contain clickable links to the target source code.
+Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (there's a setting to open them if browser).
 
 The following keyboard shortcuts are supported for faster navigation:
 - `Arrow Up` and `Arrow Down` to navigate to the next/previous displayed entry.
@@ -67,6 +68,12 @@ Additionally, the following commands (also displayed as icon buttons at the top 
 - `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, the auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
 
 Log viewer also supports search available via `Ctrl/Cmd + F` keyboard shortcut.
+
+Log viewer can be displayed `Beside File` and `In View`, there a setting to select the mode. 
+
+In the `Beside File` mode (default), the viewer is displayed in a new separate editor group to the left from your current editor. In this case the view behaves like other opened editor tabs, ie. is visible in the `Opened Editors` in VS Code file explorer view.
+
+In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to be one of VS Code's the bottom panels.
 
 TODO image
 
