@@ -2,9 +2,7 @@
 
 Console Ninja is a VS Code extension that displays `console.log` output and errors from your running browser or node applications directly in your editor. It's like your browser dev tools console tab, or terminal output from your node app, but placed in context of your code and designed to stay connected to your code.
 
-![preview](https://console-ninja.com/images/main.gif)
-
-TODO updated image
+![preview](https://console-ninja.com/images/docs-main.gif)
 
 ## Current status
 
@@ -43,10 +41,11 @@ Console Ninja is designed to seamlessly fit into typical dev workflows. After yo
 
 **\*\*** *Sometimes your modified code may get triggered immediately upon the (hot) reload of the app, for example when the code is located in the root of a component that is loaded when the app (re)starts. If the modified code is not triggered by the app (re)start, then, the same way as without Console Ninja, you need to perform some app specific actions to trigger the code execution.*
 
-At this point, you should be able to see the logs (and errors, if any) in your editor, next to the relevant line of code. Hovering over the line displays more detailed view of a log entry/error. Using the `Show Output` command displays the aggregated view to explore logged values and navigate between logs and code.
+![overview](https://console-ninja.com/images/docs-overview.png)
 
-TODO image
-TODO image for error
+At this point, you should be able to see the logs (and errors, if any) in your editor, next to the relevant line of code. Hovering over the line displays more detailed view of a log entry/error. **If you don't see the expected output, please [check Console Ninja current status](#troubleshooting)**.
+
+Using the `Show Output` command displays the aggregated view to explore logged values and navigate between logs and code.
 
 ### Log viewer
 
@@ -71,17 +70,17 @@ Log viewer also supports search available via `Ctrl/Cmd + F` keyboard shortcut.
 
 Log viewer can be displayed `Beside File` and `In View`, there a setting to select the mode. 
 
+![status](https://console-ninja.com/images/docs-view.gif)
+
 In the `Beside File` mode (default), the viewer is displayed in a new separate editor group to the left from your current editor. In this case the view behaves like other opened editor tabs, ie. is visible in the `Opened Editors` in VS Code file explorer view.
 
 In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to be one of VS Code's the bottom panels.
-
-TODO image
 
 ## Troubleshooting
 
 If Console Ninja is not working for you as expected, the first thing to check is the extension status. You may see the status info by hovering over the extension icon in VS Code status bar.
 
-TODO image
+![status](https://console-ninja.com/images/docs-status.gif?v=1)
 
 The status popup information explains the current state of the tool and provides some tips on what to do next.
 
@@ -90,8 +89,6 @@ The status popup information explains the current state of the tool and provides
 Console Ninja integrates with locally installed tools that are building/preparing your code, and instruments the code before it gets to the runtime (browser or node process that runs the code).
 
 To integrate with supported tools seamlessly, Console Ninja patches your locally installed node modules. When you stop Console Ninja in the editor with the `Pause` command, all made patches are undone.
-
-TODO yarn
 
 Console Ninja also does its best to detect if you are running your tool in production mode (by checking CLI flags and process environment variables). In the case when production mode is detected, the tool will not modify your built app code even if Console Ninja is running. However, in the (unlikely) case if you are running production builds on your local dev computer and are deploying or sharing those local builds outside of your machine, we recommend to run Console Ninja `Pause` command in your editor prior to running the build to guarantee that no instrumented code ends up in the build. 
 
