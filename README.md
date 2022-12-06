@@ -1,12 +1,12 @@
 # Console Ninja
 
-Console Ninja is a VS Code extension that displays `console.log` output and **errors** directly in your editor from your running browser or node application. It's like your browser dev tools console tab or terminal output from your node app, but instead of having to context switch, values are connected to you code and displayed ergonomically in your editor.
+Console Ninja is a VS Code extension that displays `console.log` output and **errors** directly in your editor from your running browser or node application. It's like your browser dev tools console tab or terminal output from your node app, but instead of having to context switch, values are connected to your code and displayed ergonomically in your editor.
 
 ![preview](https://console-ninja.com/images/docs-main.gif)
 
 ## Current status
 
-Console Ninja is available for everyone to use for free. It's still very early days of the product, so we would appreciate if you [let us know](https://github.com/wallabyjs/console-ninja/issues) about any issues/bugs that you may find and any feature requests that you may have.
+Console Ninja is available for everyone to use for free. It's still very early days for the product, so we would appreciate if you [let us know](https://github.com/wallabyjs/console-ninja/issues) about any issues/bugs that you may find as well as any feature requests that you may have.
 
 While we will probably commercialize Console Ninja at some point, we don't have any immediate plans to do so. Regardless, we plan to always have a free version available and any commercial offering would probably provide more advanced features.
 
@@ -28,7 +28,7 @@ Console Ninja currently supports the following tools:
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code extension.
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) VS Code extension.
 
-We have designed Console Ninja in such a way that adding support for new tools is fast and easy, so please [let us know](https://github.com/wallabyjs/console-ninja/issues) what technologies you want to use Console Ninja with.
+We have designed Console Ninja in such a way that adding support for new tools is fast and easy, so please [let us know](https://github.com/wallabyjs/console-ninja/issues) if there's another technology you want to use Console Ninja with.
 
 ## Get started
 
@@ -43,7 +43,7 @@ Console Ninja is designed to fit seamlessly into most typical dev workflows. Aft
 
 ![overview](https://console-ninja.com/images/docs-overview.png)
 
-You should now be able to see logs (and errors, if any) in your editor, next to the relevant line of code. Hovering over the `console.log` or **error** value will display more details. **If you don't see the expected output, please [check Console Ninja current status](#troubleshooting)**.
+You should now be able to see logs (and errors, if any) in your editor, next to the relevant line of code. Hovering over the `console.log` or **error** value will display more details. **If you don't see the expected output, please [check Console Ninja's current status](#troubleshooting)**.
 
 Using the `Show Output` command displays the log viewer, allowing you to explore more details and navigate between logs and code.
 
@@ -53,7 +53,7 @@ Using the `Show Output` command displays Console Ninja's log viewer. The log vie
 
 Each log entry provides summary details and is collapsed by default, providing a short preview that can be expanded (via mouse or `Arrow Right` keyboard key after it is focussed) to inspect its details. Once the details are expanded, the `Enter` keyboard key can be used to enter the details keyboard selection/navigation mode; the `Esc` key can be used to exit the mode.
 
-Each entry preview and expanded error entry details contains clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows them to be opened in the browser instead).
+Each entry preview and expanded error entry details contains clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
 
 The following keyboard shortcuts are supported for faster navigation:
 - `Arrow Up` and `Arrow Down` to navigate to the next/previous displayed entry.
@@ -64,17 +64,17 @@ Additionally, the following commands (also displayed as icon buttons at the top 
 
 - `Clear all output` from Console Ninja, including inline output (double `Esc`);
 - `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
-- `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, the auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
+- `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
 
 The log viewer supports search using the `Ctrl/Cmd + F` keyboard shortcut.
 
-The log viewer can be displayed in two modes, either `Beside File` and `In View`, there a setting to select the mode. 
+The log viewer can be displayed in two modes, either `Beside File` and `In View`, there is a setting to configure the mode. 
 
 ![status](https://console-ninja.com/images/docs-view.gif)
 
 In the `Beside File` mode (default, and recommended), the viewer is displayed in a new separate editor group to the left from your current editor. In this case the view behaves like other opened editor tabs, i.e. it is visible in the `Opened Editors` in VS Code file explorer view.
 
-In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to be another VS Code panel. An idea position of the viewer is to the right of the VS Code `Output` view.
+In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to be another VS Code panel. The recommended position for the viewer is to the right of the VS Code `Output` view in the bottom pane of your editor.
 
 ## Troubleshooting
 
@@ -96,7 +96,7 @@ Console Ninja instrumentation is limited to sending runtime values for `console.
 - in browser, it will simply do nothing if the app host is not `localhost`.
 - in node, it will fail to connect to `localhost` and will not stop your app from working.
 
-## Difference between Console Ninja and other tools
+## Differences between Console Ninja and other tools
 
 ### Quokka.js
 
@@ -110,7 +110,7 @@ The [Wallaby.js](https://wallabyjs.com/) tool from our team runs your JavaScript
 
 While you may use Console Ninja to display logs from supported test runner CLIs, test errors are not handled by Console Ninja; this is because test errors are caught/handled by test runners themselves, and special processing is required to format and display test results.
 
-Wallaby on the other hand not only displays logs and test errors inline (and in a separate ergonomically designed view), but is also [packed with features](https://wallabyjs.com/#features), such as inline code coverage and a time travel debugger, that provide superpowers to your current testing framework/stack, such as [Jest, Vitest, Mocha. etc.](https://wallabyjs.com/#tools)
+Wallaby not only displays logs and test errors inline (and in a separate ergonomically designed view), but is also [packed with features](https://wallabyjs.com/#features), such as inline code coverage and a time travel debugger, that provide superpowers to your current testing framework/stack, such as [Jest, Vitest, Mocha. etc.](https://wallabyjs.com/#tools)
 
 ### Error Lens extension
 [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) is a VS Code extension that provides inline output for VS Code `Problems` output window, typically **static code analysis errors** from your code linter or language service, such as a linter rule violation or TypeScript types-related error.
