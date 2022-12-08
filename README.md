@@ -1,6 +1,6 @@
 # Console Ninja
 
-Console Ninja is a VS Code extension that displays `console.log` output and **errors** directly in your editor from your running browser or node application. It's like your browser dev tools console tab or terminal output from your node app, but instead of having to context switch, values are connected to your code and displayed ergonomically in your editor.
+Console Ninja is a VS Code extension that displays `console.log` output and **runtime errors** directly in your editor from your running browser or node application. It's like your browser dev tools console tab or terminal output from your node app, but instead of having to context switch, values are connected to your code and displayed ergonomically in your editor.
 
 ![preview](https://console-ninja.com/images/docs-main.gif)
 
