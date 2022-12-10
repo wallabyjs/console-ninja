@@ -63,7 +63,7 @@ The following keyboard shortcuts are supported for faster navigation:
 
 Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
 
-- `Clear all output` from Console Ninja, including inline output (double `Esc`);
+- `Clear all output` from Console Ninja, including inline output;
 - `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
 - `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
 
