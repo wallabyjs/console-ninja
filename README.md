@@ -20,6 +20,7 @@ Console Ninja currently supports the following tools:
 - [Webpack](https://webpack.js.org/), including
   - [Create React App](https://create-react-app.dev/) generated applications;
   - [Angular CLI](https://angular.io/cli) and [Angular Nx](https://nx.dev/packages/angular) generated applications;
+  - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module. 
 - [Next.js](https://nextjs.org/), including first class support for client and server side logs.
 - [Jest](https://jestjs.io/) test runner (only `console.log` output, no errors).
