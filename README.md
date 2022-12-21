@@ -23,6 +23,7 @@ Console Ninja currently supports the following tools:
   - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module. 
 - [Next.js](https://nextjs.org/), including first class support for client and server side logs.
+- [Remix](https://remix.run/), including first class support for client and server side logs (only `console.log` output, no errors).
 - [Jest](https://jestjs.io/) test runner (only `console.log` output, no errors).
 - [Cypress.io](https://www.cypress.io/) end-to-end test runner.
 - [http-server](https://www.npmjs.com/package/http-server) and [serve](https://www.npmjs.com/package/serve) static HTTP servers.
