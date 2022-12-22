@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Troubleshooting Guide
+    url: https://github.com/wallabyjs/console-ninja#readme
+    about: Please check out the README for more information about the project and for troubleshooting steps.

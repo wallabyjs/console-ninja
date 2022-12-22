@@ -1,0 +1,16 @@
+name: Feature request
+description: Suggest an idea for this project
+title: "[Feature]: "
+labels: ["enhancement", "requires triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to make a feature request!
+  - type: textarea
+    id: feature-request
+    attributes:
+      label: Describe the feature you'd like.
+      description: Please tell us about the feature you would like. If you're requesting integration with another technology, please include links to the technology and if possible, include and a sample project that uses that technology.
+    validations:
+      required: true

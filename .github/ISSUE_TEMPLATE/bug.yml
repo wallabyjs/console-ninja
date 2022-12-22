@@ -1,0 +1,46 @@
+name: Bug Report
+description: Create a report to help us improve
+title: "[Bug]: "
+labels: ["bug", "requires triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        Before you submit, please make sure to check out our [troubleshooting guide](https://github.com/wallabyjs/console-ninja#troubleshooting).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expected to happen?
+      placeholder: Tell us what you see!
+      value: "I was expecting X to happen but instead Z happened."
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of Console Ninja are you using?
+      placeholder: Console Ninja extension version
+    validations:
+      required: true
+  - type: textarea
+    id: how-to-reproduce
+    attributes:
+      label: Steps to reproduce (or sample repo)
+      description: Please provide us with steps to reproduce your issue or else a sample repo that has your problem.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: Please copy and paste your log output from the `~/.console-ninja/trace.log` file in your user home directory. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting your bug!"
