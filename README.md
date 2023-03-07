@@ -60,6 +60,12 @@ Using the `Show Output` command displays the log viewer, allowing you to explore
 
 Adding `console.log` to your code will display the log output in your editor, next to the relevant line of code. Hovering over the `console.log` value will display additional details. The log output is also displayed in the [log viewer](#log-viewer).
 
+### console.trace
+
+Adding [`console.trace`](https://developer.mozilla.org/en-US/docs/Web/API/console/trace) to your code will display the **call stack trace** right in your editor, next to the line of code with `console.trace`. The stack trace output is also displayed in the [log viewer](#log-viewer).
+
+![tracepoints](https://console-ninja.com/images/docs-consoleTrace.png)
+
 ### console.time
 
 Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https://developer.mozilla.org/en-US/docs/Web/API/console/time) to your code will display the time it took to execute the code between the calls right in your editor, next to the line of code with `console.timeEnd`. The time output is also displayed in the [log viewer](#log-viewer).
@@ -168,6 +174,12 @@ In the example below:
 ![logpoints](https://console-ninja.com/images/docs-logpoints.png)
 
 Once a breakpoint is placed and Console Ninja is ready to output some values for it, then its gutter indicator is highlighted by Console Ninja. If a breakpoint is placed and its indicator stays the standard red color, it means that it is placed in a location where Console Ninja can not find anything to log (for example, on a line without executable JS/TS code).
+
+### Tracepoints
+
+Console Ninja Tracepoints allow you to trace the execution of any block of code and understand where it is being called from, **without modifying your code**. Similar to [logpoints](#logpoints), you may place a tracepoint (`Add Tracepoint` command) on any line/column, even in a middle of some expression, or next to a function parameter. When the code execution reaches the tracepoint, Console Ninja will log the **current stack trace** and the value of the expression located at the tracepoint position.
+
+![tracepoints](https://console-ninja.com/images/docs-tracepoints.gif)
 
 ### Timepoints
 
