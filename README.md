@@ -34,7 +34,9 @@ Console Ninja currently supports the following tools:
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) VS Code extension (`off` by default, can be turned on in the Console Ninja extension VS Code settings).
 - [Nuxt Vue.js Framework](https://nuxt.com).
 - [Shopify Hydrogen Framework](https://apps.shopify.com/hydrogen).
-- [Qwik Framework](https://qwik.builder.io)
+- [Qwik Framework](https://qwik.builder.io).
+
+In addition to the technologies above, Console Ninja also supports `node app.js`-like workflows including Express, Hapi, Fastify and other similar frameworks. Custom node applications are also supported. To learn more, please refer to the [Universal Node applications](#universal-node-applications) section.
 
 We have designed Console Ninja in such a way that adding support for new tools is fast and easy, so please [let us know](https://github.com/wallabyjs/console-ninja/issues) if there's another technology you want to use Console Ninja with.
 
@@ -42,13 +44,15 @@ We have designed Console Ninja in such a way that adding support for new tools i
 
 Console Ninja is designed to fit seamlessly into most typical dev workflows. After you have installed the extension in VS Code and opened your project, you may perform the same steps you usually take:
 
-- run `npm/pnpm/yarn` script or CLI command that starts/opens your app in dev/watch/hot-reload mode;
-- start making code changes, such as adding `console.log` to your code **\***;
-- if required **\*\***, perform the actions within your app that trigger the modified code, ie. click a button if you have added `console.log` to the button click handler;
+- run `npm/pnpm/yarn` script or CLI command that starts/opens your app in dev/watch/hot-reload mode **\***;
+- start making code changes, such as adding `console.log` to your code **\*\***;
+- if required **\*\*\***, perform the actions within your app that trigger the modified code, ie. click a button if you have added `console.log` to the button click handler;
 
-**\*** _Most modern tools run in watch mode with hot reload enabled. If your tool doesn't have such mode, then, the same way as without Console Ninja, you need to refresh your app page to make it run your modified code._
+**\*** _If your app is a custom nodejs application then you need to prefix your CLI command with `console-ninja`, please refer to [Universal Node applications](#universal-node-applications) for more information._
 
-**\*\*** _Sometimes your modified code may be triggered immediately upon the (hot) reload of the app. For example, when code is located in the root of a component, it will be executed when the app (re)starts. If the modified code is not triggered by the app (re)start, then, the same way as without Console Ninja, you will need to perform your app specific actions to trigger the code execution._
+**\*\*** _Most modern tools run in watch mode with hot reload enabled. If your tool doesn't have such mode, then, the same way as without Console Ninja, you need to refresh your app page to make it run your modified code._
+
+**\*\*\*** _Sometimes your modified code may be triggered immediately upon the (hot) reload of the app. For example, when code is located in the root of a component, it will be executed when the app (re)starts. If the modified code is not triggered by the app (re)start, then, the same way as without Console Ninja, you will need to perform your app specific actions to trigger the code execution._
 
 ![overview](https://console-ninja.com/images/docs-overview.png)
 
@@ -101,6 +105,28 @@ The log viewer can be displayed in two modes, either `Beside File` and `In View`
 In the `Beside File` mode (default, and recommended), the viewer is displayed in a new separate editor group to the left from your current editor. In this case the view behaves like other opened editor tabs, i.e. it is visible in the `Opened Editors` in VS Code file explorer view.
 
 In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to be another VS Code panel. The recommended position for the viewer is to the right of the VS Code `Output` view in the bottom pane of your editor.
+
+### Universal Node applications
+
+Console Ninja supports virtually any node application, including Express, Hapi, Fastify, and custom node applications. Simply prefix your `node app.js` command with `console-ninja` and run `console-ninja node app.js` in your terminal.
+
+![shell scripts](https://console-ninja.com/images/docs-shellScripts.png)
+
+Here are some more examples of how you may use the command:
+
+* `console-ninja node --watch app.js`
+* `console-ninja npx nodemon app.js`
+* `console-ninja npm run dev`
+* `console-ninja yarn node app.js`
+* `console-ninja npx tsx app.ts`
+
+On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash/source.html) the `console-ninja` command for a terminal session. After that point, any commands you run in that terminal session will automatically be started with `console-ninja`. For example:
+
+* `source console-ninja`
+* `node app1.js`
+* `node app2.js`
+
+_Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
 
 ## Troubleshooting
 
