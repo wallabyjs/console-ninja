@@ -114,17 +114,17 @@ Console Ninja supports virtually any node application, including Express, Hapi, 
 
 Here are some more examples of how you may use the command:
 
-* `console-ninja node --watch app.js`
-* `console-ninja npx nodemon app.js`
-* `console-ninja npm run dev`
-* `console-ninja yarn node app.js`
-* `console-ninja npx tsx app.ts`
+- `console-ninja node --watch app.js`
+- `console-ninja npx nodemon app.js`
+- `console-ninja npm run dev`
+- `console-ninja yarn node app.js`
+- `console-ninja npx tsx app.ts`
 
 On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash/source.html) the `console-ninja` command for a terminal session. After that point, any commands you run in that terminal session will automatically be started with `console-ninja`. For example:
 
-* `source console-ninja`
-* `node app1.js`
-* `node app2.js`
+- `source console-ninja`
+- `node app1.js`
+- `node app2.js`
 
 _Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
 
@@ -200,6 +200,16 @@ In the example below:
 ![logpoints](https://console-ninja.com/images/docs-logpoints.png)
 
 Once a breakpoint is placed and Console Ninja is ready to output some values for it, then its gutter indicator is highlighted by Console Ninja. If a breakpoint is placed and its indicator stays the standard red color, it means that it is placed in a location where Console Ninja can not find anything to log (for example, on a line without executable JS/TS code).
+
+### Function logpoints
+
+Function logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of a function** and it's argument values, **without modifying your code**. Function logpoints are useful when you want to log the execution of a function, but do not want to insert `console.log` statements in the function body or place a logpoint on every line of the function.
+
+![logpoints](https://console-ninja.com/images/docs-funclogpoints.gif)
+
+To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a function/method is defined. If there are multiple expressions or functions defined on a line, you may place an **inline breakpoint** (`Shift + F9`) near/inside the `function` keyword or method name, or at the start of an arrow function expression (`🔴() => ...`).
+
+To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
 
 ### Tracepoints
 
