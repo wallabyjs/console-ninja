@@ -108,7 +108,7 @@ In the `In View` mode, the viewer is displayed as VS Code side view. The view ca
 
 ### Universal Node applications
 
-Console Ninja supports virtually any node application, including Express, Hapi, Fastify, and custom node applications. Simply prefix your `node app.js` command with `console-ninja` and run `console-ninja node app.js` in your terminal.
+Console Ninja supports virtually any node application (starting from node v16.15.0), including Express, Hapi, Fastify, and custom node applications. Simply prefix your `node app.js` command with `console-ninja` and run `console-ninja node app.js` in your terminal.
 
 ![shell scripts](https://console-ninja.com/images/docs-shellScripts.png)
 
@@ -119,6 +119,8 @@ Here are some more examples of how you may use the command:
 - `console-ninja npm run dev`
 - `console-ninja yarn node app.js`
 - `console-ninja npx tsx app.ts`
+
+If `console-ninja` is not available in an external terminal session after executing `Console Ninja: Start` command and reloading your terminal session then you may need to add `~/.console-ninja/.bin` to `PATH` manually. On Windows, depending on how you start apps, you may need to restart Explorer process or re-login to the system.
 
 On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash/source.html) the `console-ninja` command for a terminal session. After that point, any commands you run in that terminal session will automatically be started with `console-ninja`. For example:
 
