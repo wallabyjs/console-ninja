@@ -119,6 +119,7 @@ Here are some more examples of how you may use the command:
 - `console-ninja npm run dev`
 - `console-ninja yarn node app.js`
 - `console-ninja npx tsx app.ts`
+- `console-ninja npx ts-node app.ts`
 
 If `console-ninja` is not available in an external terminal session after executing `Console Ninja: Start` command and reloading your terminal session then you may need to add `~/.console-ninja/.bin` to `PATH` manually. On Windows, depending on how you start apps, you may need to restart Explorer process or re-login to the system.
 
