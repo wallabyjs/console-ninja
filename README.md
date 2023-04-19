@@ -214,6 +214,19 @@ To use the feature, you may simply place a breakpoint (`F9`) on a line of code w
 
 To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
 
+### Log Viewer Pro
+
+In addition to the [log viewer](#log-viewer) features available in the **Community** edition, the **PRO** edition includes additional features to provide an even more powerful way to analyze complex output.
+
+![logviewerpro](https://console-ninja.com/images/docs-logviewerpro.png)
+
+**Indentation guides** provide a clear visual representation of the nested structure of
+your objects. 
+
+**Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
+These features allow you to focus on specific sections of your logs without being overwhelmed by the
+sheer size and complexity of the output.
+
 ### Tracepoints
 
 Console Ninja Tracepoints allow you to trace the execution of any block of code and understand where it is being called from, **without modifying your code**. Similar to [logpoints](#logpoints), you may place a tracepoint (`Add Tracepoint` command) on any line/column, even in a middle of some expression, or next to a function parameter. When the code execution reaches the tracepoint, Console Ninja will log the **current stack trace** and the value of the expression located at the tracepoint position.
