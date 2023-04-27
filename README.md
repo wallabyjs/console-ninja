@@ -4,6 +4,35 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 
 ![preview](https://console-ninja.com/images/docs-main.gif)
 
+---
+
+## Table of contents
+
+- [Current status](#current-status)
+- [Supported technologies](#supported-technologies)
+- [Get started](#get-started)
+- Commumity Edition Features
+  - [console.log](#consolelog)
+  - [console.trace](#consoletrace)
+  - [console.time](#consoletime)
+  - [Log viewer](#log-viewer)
+  - [Universal node applications](#universal-node-applications)
+- [PRO Edition Features](#pro-features)
+  - [Logpoints](#logpoints)
+  - [Function logpoints](#function-logpoints)
+  - [Log Viewer Pro](#log-viewer-pro)
+  - [Filtering Pro](#output-filtering-pro)
+  - [Tracepoints](#tracepoints)
+  - [Timepoints](#timepoints)
+- [Troubleshooting](#troubleshooting)
+- [How does it work?](#how-does-it-work)
+- [Differences between Console Ninja and other tools](#differences-between-console-ninja-and-other-tools)
+  - [Quokka.js](#quokkajs)
+  - [Wallaby.js](#wallabyjs)
+  - [Error Lens extension](#error-lens-extension)
+
+---
+
 ## Current status
 
 Console Ninja is available for everyone to use for free at the moment. It's still very early days for the product, so we would appreciate if you [let us know](https://github.com/wallabyjs/console-ninja/issues) about any issues/bugs that you may find as well as any feature requests that you may have.
@@ -221,11 +250,21 @@ In addition to the [log viewer](#log-viewer) features available in the **Communi
 ![logviewerpro](https://console-ninja.com/images/docs-logviewerpro.png)
 
 **Indentation guides** provide a clear visual representation of the nested structure of
-your objects. 
+your objects.
 
 **Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
 These features allow you to focus on specific sections of your logs without being overwhelmed by the
 sheer size and complexity of the output.
+
+### Output Filtering Pro
+
+Console Ninja **PRO** edition includes output filtering features to make working in large projects or projects with a lot of output easier.
+
+- `Capture and display errors` setting allows configuring whether to capture and display errors in the editor and in the log viewer. This is useful when you are working on a project with a lot of reported errors and you want to focus on logs only.
+
+- `Capture and display logs only from files opened in editor` setting allows configuring whether to capture and display logs from all files or only the files that are opened in your editor. This is useful when you are working on a project with a lot of files with logs and you want to focus only on output from files that you are currently working on.
+
+- `Capture and display logs only from logpoints` setting allows configuring whether to capture and display logs from `console.log` and other `console.*` statements. This is useful when you are working on a project with a lot of `console.log` statements and you want to focus on output from your [logpoints](#logpoints) only.
 
 ### Tracepoints
 
