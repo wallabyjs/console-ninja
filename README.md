@@ -231,7 +231,7 @@ In the example below:
 
 ![logpoints](https://console-ninja.com/images/docs-logpoints.png)
 
-Once a breakpoint is placed and Console Ninja is ready to output some values for it, then its gutter indicator is highlighted by Console Ninja. If a breakpoint is placed and its indicator stays the standard red color, it means that it is placed in a location where Console Ninja can not find anything to log (for example, on a line without executable JS/TS code).
+Once a breakpoint is placed and Console Ninja is ready to output some values for it, a special ⚡️ indicator is placed at the line with the breakpoint. If a breakpoint is placed and there's no special indicator visible, it means that it is placed in a location where Console Ninja cannot find anything to log (for example, on a line without executable JS/TS code).
 
 ### Function logpoints
 
