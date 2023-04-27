@@ -109,7 +109,7 @@ Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https:
 
 Using the `Show Output` command displays Console Ninja's log viewer. The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focused in the log viewer.
 
-Each log entry provides summary details and is collapsed by default, providing a short preview that can be expanded (via mouse or `Arrow Right` keyboard key after it is focussed) to inspect its details. Once the details are expanded, the `Enter` keyboard key can be used to enter the details keyboard selection/navigation mode; the `Esc` key can be used to exit the mode.
+Each log entry provides summary details and is collapsed by default, providing a short preview that can be expanded (via mouse or `Arrow Right` keyboard key after it is focused) to inspect its details. Once the details are expanded, the `Enter` keyboard key can be used to enter the details keyboard selection/navigation mode; the `Esc` key can be used to exit the mode.
 
 Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
 
@@ -117,7 +117,7 @@ The following keyboard shortcuts are supported for faster navigation:
 
 - `Arrow Up` and `Arrow Down` to navigate to the next/previous displayed entry.
 - `Home` and `End` to navigate to the first/last displayed entry.
-- `Arrow Left` to collapse focussed entry details and `Ctrl/Cmd + Arrow Left` to collapse all expanded entries details.
+- `Arrow Left` to collapse focused entry details and `Ctrl/Cmd + Arrow Left` to collapse all expanded entries details.
 
 Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
 
