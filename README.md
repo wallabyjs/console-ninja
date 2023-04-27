@@ -11,7 +11,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 - [Current status](#current-status)
 - [Supported technologies](#supported-technologies)
 - [Get started](#get-started)
-- Commumity Edition Features
+- Community Edition Features
   - [console.log](#consolelog)
   - [console.trace](#consoletrace)
   - [console.time](#consoletime)
@@ -37,7 +37,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 
 Console Ninja is available for everyone to use for free at the moment. It's still very early days for the product, so we would appreciate if you [let us know](https://github.com/wallabyjs/console-ninja/issues) about any issues/bugs that you may find as well as any feature requests that you may have.
 
-We plan to always have a free **Community** edition available with features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. The **PRO** (paid) edition will be introduced at some point in the next few months and will have additional features that are [documented in the separate section](#pro-features). So unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
+We plan to always have a free **Community** edition available with features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. The **PRO** (paid) edition will be introduced at some point in the next few months and will have additional features that are [documented in a separate section](#pro-features). So unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
 
 Before we start working on our commercial model, we will be releasing **PRO** features and making them available to everyone for a limited time. This will give you the opportunity to try out the **PRO features for free**. If you do not want to use the free **PRO** features before the paid version becomes available, you can explicitly disable them in the extension settings.
 
@@ -107,11 +107,11 @@ Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https:
 
 ### Log viewer
 
-Using the `Show Output` command displays Console Ninja's log viewer. The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focussed in the log viewer.
+Using the `Show Output` command displays Console Ninja's log viewer. The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focused in the log viewer.
 
 Each log entry provides summary details and is collapsed by default, providing a short preview that can be expanded (via mouse or `Arrow Right` keyboard key after it is focussed) to inspect its details. Once the details are expanded, the `Enter` keyboard key can be used to enter the details keyboard selection/navigation mode; the `Esc` key can be used to exit the mode.
 
-Each entry preview and expanded error entry details contains clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
+Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
 
 The following keyboard shortcuts are supported for faster navigation:
 
@@ -131,9 +131,9 @@ The log viewer can be displayed in two modes, either `Beside File` and `In View`
 
 ![status](https://console-ninja.com/images/docs-view.gif)
 
-In the `Beside File` mode (default, and recommended), the viewer is displayed in a new separate editor group to the left from your current editor. In this case the view behaves like other opened editor tabs, i.e. it is visible in the `Opened Editors` in VS Code file explorer view.
+In the `Beside File` mode (default, and recommended), the viewer is displayed in a new separate editor group to the left from your current editor. In this case, the view behaves like other opened editor tabs, i.e. it is visible in the `Opened Editors` in VS Code file explorer view.
 
-In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to be another VS Code panel. The recommended position for the viewer is to the right of the VS Code `Output` view in the bottom pane of your editor.
+In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to another VS Code panel. The recommended position for the viewer is to the right of the VS Code `Output` view in the bottom pane of your editor.
 
 ### Universal Node applications
 
@@ -158,7 +158,7 @@ On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash
 - `node app1.js`
 - `node app2.js`
 
-_Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
+_Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of the box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
 
 ## Troubleshooting
 
@@ -211,11 +211,11 @@ Before we start working on our commercial model, we will be releasing **PRO** fe
 
 ### Logpoints
 
-While using the `console.log` feature provides an excellent way to log expression values, oftentimes you may want to display or capture expression values **without modifying your code**. There are also many times where inserting `console.log` can get tedious, such as:
+While using the `console.log` feature provides an excellent way to log expression values, oftentimes you may want to display or capture expression values **without modifying your code**. There are also many times when inserting `console.log` can get tedious, such as:
 
 - when logging an arrow function expression return value or the function parameter value (ie. logging `e` or `e.prop` in `a.map(e => e.prop)`);
 - or logging a JSX expression value (ie. logging `count` in `<span>count is {count}</span>`).
-- or logging an expression in a middle of another expression (ie. logging the result of `a.b()` in `a.b().c();` without calling `a.b()` twice).
+- or logging an expression in the middle of another expression (ie. logging the result of `a.b()` in `a.b().c();` without calling `a.b()` twice).
 
 Console Ninja Logpoints allow you to log the value of any expression in your code, **without modifying your code**, by simply placing a VS Code breakpoint in your code. When Console Ninja is running (and the VS Code debugger is not), the breakpoint will not stop your code, but will act as a logpoint and will log the value of the expression next to your code and to the Console Ninja log viewer.
 
@@ -268,7 +268,7 @@ Console Ninja **PRO** edition includes output filtering features to make working
 
 ### Tracepoints
 
-Console Ninja Tracepoints allow you to trace the execution of any block of code and understand where it is being called from, **without modifying your code**. Similar to [logpoints](#logpoints), you may place a tracepoint (`Add Tracepoint` command) on any line/column, even in a middle of some expression, or next to a function parameter. When the code execution reaches the tracepoint, Console Ninja will log the **current stack trace** and the value of the expression located at the tracepoint position.
+Console Ninja Tracepoints allow you to trace the execution of any block of code and understand where it is being called from, **without modifying your code**. Similar to [logpoints](#logpoints), you may place a tracepoint (`Add Tracepoint` command) on any line/column, even in the middle of some expression, or next to a function parameter. When the code execution reaches the tracepoint, Console Ninja will log the **current stack trace** and the value of the expression located at the tracepoint position.
 
 ![tracepoints](https://console-ninja.com/images/docs-tracepoints.gif)
 
