@@ -64,6 +64,7 @@ Console Ninja currently supports the following tools:
 - [Nuxt Vue.js Framework](https://nuxt.com).
 - [Shopify Hydrogen Framework](https://apps.shopify.com/hydrogen).
 - [Qwik Framework](https://qwik.builder.io).
+- [Serverless Offline](https://github.com/dherault/serverless-offline).
 
 In addition to the technologies above, Console Ninja also supports `node app.js`-like workflows including Express, Hapi, Fastify and other similar frameworks. Custom node applications are also supported. To learn more, please refer to the [Universal Node applications](#universal-node-applications) section.
 
