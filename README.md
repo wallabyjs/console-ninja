@@ -15,11 +15,13 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [console.log](#consolelog)
   - [console.trace](#consoletrace)
   - [console.time](#consoletime)
+  - [Hover tooltip](#hover-tooltip)
   - [Log viewer](#log-viewer)
   - [Universal node applications](#universal-node-applications)
 - [PRO Edition Features](#pro-features)
   - [Logpoints](#logpoints)
   - [Function logpoints](#function-logpoints)
+  - [Hover tooltip Pro](#hover-tooltip-pro)
   - [Log Viewer Pro](#log-viewer-pro)
   - [Filtering Pro](#output-filtering-pro)
   - [Tracepoints](#tracepoints)
@@ -105,6 +107,17 @@ Adding [`console.trace`](https://developer.mozilla.org/en-US/docs/Web/API/consol
 Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https://developer.mozilla.org/en-US/docs/Web/API/console/time) to your code will display the time it took to execute the code between the calls right in your editor, next to the line of code with `console.timeEnd`. The time output is also displayed in the [log viewer](#log-viewer).
 
 ![timepoints](https://console-ninja.com/images/docs-consoleTime.png)
+
+### Hover tooltip
+
+Hovering over Console Ninja output, such as logs or errors, will display more details, such as the log value, error message, and stack trace.
+
+![hover](https://console-ninja.com/images/docs-hover.png)
+
+The hover tooltip also provides a few actions displayed as icons in the top right corner of the widget, for example:
+
+- `Show in Console Output` action that opens Console Ninja's [log viewer](#log-viewer) and focuses on the log entry.
+- `Open Filtering Settings` action that opens Console Ninja's output filtering settings.
 
 ### Log viewer
 
@@ -243,6 +256,15 @@ Function logpoints are special types of Console Ninja [logpoints](#logpoints) th
 To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a function/method is defined. If there are multiple expressions or functions defined on a line, you may place an **inline breakpoint** (`Shift + F9`) near/inside the `function` keyword or method name, or at the start of an arrow function expression (`🔴() => ...`).
 
 To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
+
+### Hover tooltip Pro
+
+In addition to the [hover tooltip](#hover-tooltip) features available in the **Community** edition, the **PRO** edition includes additional actions:
+
+- `Copy to Clipboard` action that copies the logged value or the error details to the clipboard.
+- `Search the Web` action that opens a web browser with the error message as a search query. This action is only available for errors. The search engine can be configured in the Console Ninja extension settings via the `console-ninja.searchUrl` setting.
+
+![hover](https://console-ninja.com/images/docs-hover.png)
 
 ### Log Viewer Pro
 
