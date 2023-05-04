@@ -21,6 +21,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 - [PRO Edition Features](#pro-features)
   - [Logpoints](#logpoints)
   - [Function logpoints](#function-logpoints)
+  - [Class logpoints](#class-logpoints)
   - [Hover tooltip Pro](#hover-tooltip-pro)
   - [Log Viewer Pro](#log-viewer-pro)
   - [Filtering Pro](#output-filtering-pro)
@@ -254,6 +255,14 @@ Function logpoints are special types of Console Ninja [logpoints](#logpoints) th
 ![logpoints](https://console-ninja.com/images/docs-funclogpoints.gif)
 
 To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a function/method is defined. If there are multiple expressions or functions defined on a line, you may place an **inline breakpoint** (`Shift + F9`) near/inside the `function` keyword or method name, or at the start of an arrow function expression (`🔴() => ...`).
+
+To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
+
+### Class logpoints
+
+Class logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of all functions of a class without modifying your code**.
+
+To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a `class` is defined.
 
 To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
 
