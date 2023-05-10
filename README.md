@@ -128,6 +128,8 @@ Each log entry provides summary details and is collapsed by default, providing a
 
 Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
 
+Similar to browser dev tools, sequential entries of a primitive type, such as `string`, `boolean` and `number`, and any errors, that are logged from the same place in the code and have the same value are grouped together and displayed as a single entry. The entry prefix indicates the number of entires in the group.
+
 The following keyboard shortcuts are supported for faster navigation:
 
 - `Arrow Up` and `Arrow Down` to navigate to the next/previous displayed entry.
@@ -281,12 +283,22 @@ In addition to the [log viewer](#log-viewer) features available in the **Communi
 
 ![logviewerpro](https://console-ninja.com/images/docs-logviewerpro.png)
 
+#### Indentation guides
+
 **Indentation guides** provide a clear visual representation of the nested structure of
 your objects.
+
+#### Expand/collapse controls
 
 **Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
 These features allow you to focus on specific sections of your logs without being overwhelmed by the
 sheer size and complexity of the output.
+
+#### Log entry grouping
+
+Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entires in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
+
+![logviewerpro](https://console-ninja.com/images/docs-grouping.png)
 
 ### Output Filtering Pro
 
