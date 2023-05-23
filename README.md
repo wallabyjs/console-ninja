@@ -294,6 +294,18 @@ your objects.
 These features allow you to focus on specific sections of your logs without being overwhelmed by the
 sheer size and complexity of the output.
 
+#### Log entry highlighting
+
+This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
+
+![logviewerpro](https://console-ninja.com/images/docs-highlighting.gif)
+
+Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
+
+`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command pallette, from the log hover tooltip and as a code action (via the editor line light-bulb).
+
+`Clear All Log Highlights` command allows you to clear all current log entry highlights.
+
 #### Log entry grouping
 
 Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entires in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
