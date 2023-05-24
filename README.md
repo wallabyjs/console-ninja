@@ -138,7 +138,8 @@ The following keyboard shortcuts are supported for faster navigation:
 
 Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
 
-- `Clear all output` from Console Ninja, including inline output;
+- `Clear all output` from Console Ninja, including inline output.
+- `Toggle log entry date/time display` to show/hide date/time part of each dispalyed log entry.
 - `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
 - `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
 
@@ -272,7 +273,7 @@ To override the value logged for a line within the logged function, **inline bre
 
 In addition to the [hover tooltip](#hover-tooltip) features available in the **Community** edition, the **PRO** edition includes additional actions:
 
-- `Copy to Clipboard` action that copies the logged value or the error details to the clipboard.
+- `Copy to Clipboard` action that copies the logged value or the error details to the clipboard. It's also available as a code action (via the editor line light-bulb).
 - `Search the Web` action that opens a web browser with the error message as a search query. This action is only available for errors. The search engine can be configured in the Console Ninja extension settings via the `console-ninja.searchUrl` setting.
 
 ![hover](https://console-ninja.com/images/docs-hover.png)
@@ -311,6 +312,10 @@ Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
 Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entires in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
 
 ![logviewerpro](https://console-ninja.com/images/docs-grouping.png)
+
+#### Log entry actions
+
+- `Copy` action allows to copy selected log entry to clipboard. The action is available from the selected log entry toolbar and via `Ctrl/Cmd + C` shortcut.
 
 ### Output Filtering Pro
 
