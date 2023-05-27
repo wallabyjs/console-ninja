@@ -58,16 +58,17 @@ Console Ninja currently supports the following tools:
   - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module.
 - [Next.js](https://nextjs.org/), including first class support for client and server side logs.
-- [Remix](https://remix.run/), including first class support for client and server side logs (only `console.log` output, no errors).
-- [Jest](https://jestjs.io/) test runner (only `console.log` output, no errors).
+- [Remix](https://remix.run/), including first class support for client and server side logs (no errors).
+- [Astro](https://astro.build), including first class support for client and server side logs (no server side errors).
+- [Nuxt Vue.js](https://nuxt.com).
+- [Shopify Hydrogen](https://apps.shopify.com/hydrogen).
+- [Qwik](https://qwik.builder.io).
+- [Serverless Offline](https://github.com/dherault/serverless-offline).
+- [Jest](https://jestjs.io/) test runner (no errors).
 - [Cypress.io](https://www.cypress.io/) end-to-end test runner.
 - [http-server](https://www.npmjs.com/package/http-server) and [serve](https://www.npmjs.com/package/serve) static HTTP servers.
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code extension (`off` by default, can be turned on in the Console Ninja extension VS Code settings).
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) VS Code extension (`off` by default, can be turned on in the Console Ninja extension VS Code settings).
-- [Nuxt Vue.js Framework](https://nuxt.com).
-- [Shopify Hydrogen Framework](https://apps.shopify.com/hydrogen).
-- [Qwik Framework](https://qwik.builder.io).
-- [Serverless Offline](https://github.com/dherault/serverless-offline).
 
 In addition to the technologies above, Console Ninja also supports `node app.js`-like workflows including Express, Hapi, Fastify and other similar frameworks. Custom node applications are also supported. To learn more, please refer to the [Universal Node applications](#universal-node-applications) section.
 
