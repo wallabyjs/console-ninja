@@ -59,8 +59,8 @@ Console Ninja currently supports the following tools:
   - any web applications configured to use Webpack node module.
 - [Next.js](https://nextjs.org/), including first class support for client and server side logs.
 - [Remix](https://remix.run/), including first class support for client and server side logs (no errors).
+- [Nuxt](https://nuxt.com).
 - [Astro](https://astro.build), including first class support for client and server side logs (no server side errors).
-- [Nuxt Vue.js](https://nuxt.com).
 - [Shopify Hydrogen](https://apps.shopify.com/hydrogen).
 - [Qwik](https://qwik.builder.io).
 - [Serverless Offline](https://github.com/dherault/serverless-offline).
