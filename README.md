@@ -66,7 +66,7 @@ Console Ninja currently supports the following tools:
 - [Serverless Offline](https://github.com/dherault/serverless-offline).
 - [Jest](https://jestjs.io/) test runner (no errors).
 - [Cypress.io](https://www.cypress.io/) end-to-end test runner.
-- [http-server](https://www.npmjs.com/package/http-server) and [serve](https://www.npmjs.com/package/serve) static HTTP servers.
+- [http-server](https://www.npmjs.com/package/http-server), [live-server](https://www.npmjs.com/package/live-server) and [serve](https://www.npmjs.com/package/serve) static HTTP servers.
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code extension (`off` by default, can be turned on in the Console Ninja extension VS Code settings).
 - [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) VS Code extension (`off` by default, can be turned on in the Console Ninja extension VS Code settings).
 
