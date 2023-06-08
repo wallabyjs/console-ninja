@@ -19,6 +19,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Log viewer](#log-viewer)
   - [Universal node applications](#universal-node-applications)
 - [PRO Edition Features](#pro-features)
+  - [Watchpoints](#watchpoints)
   - [Logpoints](#logpoints)
   - [Function logpoints](#function-logpoints)
   - [Class logpoints](#class-logpoints)
@@ -227,6 +228,22 @@ In contrast, Console Ninja runs within your application and displays **runtime l
 We plan to always have a free **Community** edition available with features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. The **PRO** (paid) edition will be introduced at some point in the next few months and will have additional features that are documented below. So unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
 
 Before we start working on our commercial model, we will be releasing **PRO** features and making them available to everyone for a limited time. This will give you the opportunity to try out the **PRO features for free**. If you do not want to use the free **PRO** features before the paid version becomes available, you can explicitly disable them in the extension settings.
+
+### Watchpoints
+
+The `Watch Value` feature allows you to keep the value of any logged expression displayed. While opened, the value can easily be monitored for any changes made to it as a result of your code modifications or some actions in your app.
+
+![watchpoints](https://console-ninja.com/images/docs-watchpoints.gif)
+
+The `Watch Value` feature is available for both `console.log` and [logpoints](#logpoints). The feature is available from the [hover tooltip](#hover-tooltip), as a code action (via the editor line `light-bulb`) and from the editor command pallette.
+
+You can watch multiple values at the same time. Value widgets in the Console Output can be closed individually (close icon or `Ctrl/Cmd + W` keyboard shortcut on a focused value) or all at once. Arrow keys can be used to navigate between displayed values.
+
+`Copy` is available from the focused widget header and via `Ctrl/Cmd + C` shortcut. Search (`Ctrl/Cmd + F`) can be used to find any specific content inside displayed values. The `Enter` key can be used on a focused value widget to enter the details keyboard selection/navigation mode; and the `Esc` key can be used to exit the mode.
+
+![watchpoints-details](https://console-ninja.com/images/docs-watchpoints-details.png)
+
+The Console Output value widgets layout can be changed from `automatic` (default) to `manual` (with drag & drop and resize support) via the `Toggle Value Layout Mode` command (also available as at the top of the watched `Values` view). [Log Highlighting](#log-viewer-pro) is also supported for displayed values via coloring the value widget header with the same highlight color as in the log viewer and editor.
 
 ### Logpoints
 
