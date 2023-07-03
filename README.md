@@ -343,6 +343,12 @@ Console Ninja **PRO** edition includes output filtering features to make working
 
 - `Capture and display logs only from files opened in editor` setting allows configuring whether to capture and display logs from all files or only the files that are opened in your editor. This is useful when you are working on a project with a lot of files with logs and you want to focus only on output from files that you are currently working on.
 
+- `Display logs from multiple running tools together in a single list` setting allows to merge output from multiple running project tools, such as next.js server and next.js browser logs, Jest logs, etc., and display the output together in the [log viewer](#log-viewer). The merged output provides a holistic view of your running application, eliminating the need to
+  switch between multiple output sources. This integrated view of logs from all of your tools
+  provides an intuitive and efficient way to understand the complete behavior of your application.
+
+![multitool](https://console-ninja.com/images/tile_multitool.gif)
+
 - `Capture and display logs only from logpoints` setting allows configuring whether to capture and display logs from `console.log` and other `console.*` statements. This is useful when you are working on a project with a lot of `console.log` statements and you want to focus on output from your [logpoints](#logpoints) only.
 
 ### Tracepoints
