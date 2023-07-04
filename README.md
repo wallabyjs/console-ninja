@@ -130,7 +130,7 @@ Each log entry provides summary details and is collapsed by default, providing a
 
 Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
 
-Similar to browser dev tools, sequential entries of a primitive type, such as `string`, `boolean` and `number`, and any errors, that are logged from the same place in the code and have the same value are grouped together and displayed as a single entry. The entry prefix indicates the number of entires in the group.
+Similar to browser dev tools, sequential entries of a primitive type, such as `string`, `boolean` and `number`, and any errors, that are logged from the same place in the code and have the same value are grouped together and displayed as a single entry. The entry prefix indicates the number of entries in the group.
 
 The following keyboard shortcuts are supported for faster navigation:
 
@@ -141,7 +141,7 @@ The following keyboard shortcuts are supported for faster navigation:
 Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
 
 - `Clear all output` from Console Ninja, including inline output.
-- `Toggle log entry date/time display` to show/hide date/time part of each dispalyed log entry.
+- `Toggle log entry date/time display` to show/hide date/time part of each displayed log entry.
 - `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
 - `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
 
@@ -235,7 +235,7 @@ The `Watch Value` feature allows you to keep the value of any logged expression 
 
 ![watchpoints](https://console-ninja.com/images/docs-watchpoints.gif)
 
-The `Watch Value` feature is available for both `console.log` and [logpoints](#logpoints). The feature is available from the [hover tooltip](#hover-tooltip), as a code action (via the editor line `light-bulb`) and from the editor command pallette.
+The `Watch Value` feature is available for both `console.log` and [logpoints](#logpoints). The feature is available from the [hover tooltip](#hover-tooltip), as a code action (via the editor line `light-bulb`) and from the editor command palette.
 
 You can watch multiple values at the same time. Value widgets in the Console Output can be closed individually (close icon or `Ctrl/Cmd + W` keyboard shortcut on a focused value) or all at once. Arrow keys can be used to navigate between displayed values.
 
@@ -249,9 +249,9 @@ The Console Output value widgets layout can be changed from `automatic` (default
 
 While using the `console.log` feature provides an excellent way to log expression values, oftentimes you may want to display or capture expression values **without modifying your code**. There are also many times when inserting `console.log` can get tedious, such as:
 
-- when logging an arrow function expression return value or the function parameter value (ie. logging `e` or `e.prop` in `a.map(e => e.prop)`);
-- or logging a JSX expression value (ie. logging `count` in `<span>count is {count}</span>`).
-- or logging an expression in the middle of another expression (ie. logging the result of `a.b()` in `a.b().c();` without calling `a.b()` twice).
+- when logging an arrow function expression return value or the function parameter value (i.e. logging `e` or `e.prop` in `a.map(e => e.prop)`);
+- or logging a JSX expression value (i.e. logging `count` in `<span>count is {count}</span>`).
+- or logging an expression in the middle of another expression (i.e. logging the result of `a.b()` in `a.b().c();` without calling `a.b()` twice).
 
 Console Ninja Logpoints allow you to log the value of any expression in your code, **without modifying your code**, by simply placing a VS Code breakpoint in your code. When Console Ninja is running (and the VS Code debugger is not), the breakpoint will not stop your code, but will act as a logpoint and will log the value of the expression next to your code and to the Console Ninja log viewer.
 
@@ -321,13 +321,13 @@ This feature allows you to highlight [log viewer](#log-viewer) entries that are 
 
 Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
 
-`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command pallette, from the log hover tooltip and as a code action (via the editor line light-bulb).
+`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
 
 `Clear All Log Highlights` command allows you to clear all current log entry highlights.
 
 #### Log entry grouping
 
-Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entires in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
+Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entries in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
 
 ![logviewerpro](https://console-ninja.com/images/docs-grouping.png)
 
