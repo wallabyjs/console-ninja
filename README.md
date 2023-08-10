@@ -26,6 +26,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Hover tooltip Pro](#hover-tooltip-pro)
   - [Log Viewer Pro](#log-viewer-pro)
   - [Filtering Pro](#output-filtering-pro)
+  - [Quick Search Pro](#quick-search-pro)
   - [Tracepoints](#tracepoints)
   - [Timepoints](#timepoints)
 - [Troubleshooting](#troubleshooting)
@@ -350,6 +351,22 @@ Console Ninja **PRO** edition includes output filtering features to make working
 ![multitool](https://camo.githubusercontent.com/86dfcb6da3b7bde4591aad41857d4fbc96f471623734b943827bcb1ab4fdb804/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f74696c655f6d756c7469746f6f6c2e676966)
 
 - `Capture and display logs only from logpoints` setting allows configuring whether to capture and display logs from `console.log` and other `console.*` statements. This is useful when you are working on a project with a lot of `console.log` statements and you want to focus on output from your [logpoints](#logpoints) only.
+
+### Quick Search Pro
+
+In addition to the [log viewer search](#log-viewer) features available in the **Community** edition, the **PRO** edition provides an easy way to search
+across all of your project logs and errors with minimal distraction.
+
+![search pro](https://github.com/wallabyjs/console-ninja/assets/979966/2f59f330-6268-4d3a-85ad-0a9a1ef77262)
+
+The `Search Logs` command allows you to search across all of your project logs and errors.
+
+Quickly navigate to the specific line of code
+associated with a log, as well as view the entire log in the
+log viewer. Additionally, you can navigate between matching
+log entries within the log viewer itself.
+
+Separate navigation actions (either to open the code only or open the log viewer only) are available for each search result as side buttons.
 
 ### Tracepoints
 
