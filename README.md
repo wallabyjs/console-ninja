@@ -189,6 +189,8 @@ If Console Ninja is not working for you as expected, the first thing to check is
 
 The status popup information dialog explains the current state of the tool and provides some tips on what to do next.
 
+Console Ninja uses a local websocket server to communicate with your editor, and **VPNs and firewalls** can interfere with this communication. If you are having connection-related issues and are connected to a VPN, try disconnecting from the VPN. If you are using a firewall, you may try **temporarily** disabling it to see if it is the cause of your problem; if so, refer to your firewall documentation to see how to identify blocked traffic and how to configure it to allow Console Ninja.
+
 ## How does it work
 
 Console Ninja integrates with locally installed tools that are building/preparing your code, and then inspects and adjusts your code (in a way that doesn't change how it executes) before it gets to the runtime (browser or node process that runs the code).
@@ -301,7 +303,7 @@ In addition to the [hover tooltip](#hover-tooltip) features available in the **C
 
 In addition to the [log viewer](#log-viewer) features available in the **Community** edition, the **PRO** edition includes additional features to provide an even more powerful way to analyze complex output.
 
-![logviewerpro](https://camo.githubusercontent.com/3e3ed8bd008aae8659e41295eb70d1b4ee1635f8ca451f3314b93729c0e61cd5/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d6c6f6776696577657270726f2e706e67)
+![logviewerpro](https://github.com/wallabyjs/console-ninja/assets/979966/17b1d6cb-0882-4c45-93fb-cd012ff2ed71)
 
 #### Indentation guides
 
@@ -313,6 +315,12 @@ your objects.
 **Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
 These features allow you to focus on specific sections of your logs without being overwhelmed by the
 sheer size and complexity of the output.
+
+#### Breadcrumbs
+
+**Breadcrumbs** feature provides a quick way of navigating the nested structure of your large logged objects.
+
+After clicking on a value inside a large object or using `Enter` plus navigation keys to browse the object, you can see the current property path in the breadcrumbs panel at the top of the log viewer. You can click on any of the breadcrumbs to scroll to the corresponding node and highlight it.
 
 #### Log entry highlighting
 
