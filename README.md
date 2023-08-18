@@ -276,11 +276,35 @@ Once a breakpoint is placed and Console Ninja is ready to output some values for
 
 Function logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of a function** and it's argument values, **without modifying your code**. Function logpoints are useful when you want to log the execution of a function, but do not want to insert `console.log` statements in the function body or place a logpoint on every line of the function.
 
-![logpoints](https://camo.githubusercontent.com/663ee406cf3948034e9960e72df6f8a3d633904686ef44609e6498dacbe317e2/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d66756e636c6f67706f696e74732e676966)
+![docs-funclogpoints](https://github.com/wallabyjs/console-ninja/assets/979966/536d1655-6bab-416b-9317-74b4ef54b18c)
 
 To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a function/method is defined. If there are multiple expressions or functions defined on a line, you may place an **inline breakpoint** (`Shift + F9`) near/inside the `function` keyword or method name, or at the start of an arrow function expression (`🔴() => ...`).
 
 To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
+
+#### Code Coverage
+
+Function logpoints also collect accumulated **code coverage** for your function calls. The coverage is displayed in the gutter of the editor, and is
+updated as you interact with your application or change your source code.
+
+Here is what the coverage indicators mean:
+
+- If you see a **gray** square next to a line of code, it means that the line of
+  code is has not been executed yet.
+- If you see a **yellow** square next to a line of code, it means that the line
+  of code is only partially executed.
+- If you see a **green** square next to a line of code, it means that the line
+  of code has been executed at least once.
+- If you see a **red** square next to a line of code, it means that the line of
+  code is the source of an error, or in the stack of an error.
+
+The colors of gutter indicators can be changed in Console Ninja settings.
+
+The `Clear all output` command can be used to reset the accumulated code coverage state. This may be useful if you want to collect and inspect the coverage state for a specific interaction with your application.
+
+The `Toggle Uncovered Code Regions` command allows you to quickly
+highlight regions of your code that have not been executed (on lines with **gray** and **yellow** gutter
+indicators).
 
 ### Class logpoints
 
