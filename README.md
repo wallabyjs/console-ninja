@@ -96,17 +96,17 @@ You should now be able to see logs (and errors, if any) in your editor, next to 
 
 Using the `Show Output` command displays the log viewer, allowing you to explore more details and navigate between logs and code.
 
-### console.log
+### console.log<a id='consolelog'></a>
 
 Adding `console.log` to your code will display the log output in your editor, next to the relevant line of code. Hovering over the `console.log` value will display additional details. The log output is also displayed in the [log viewer](#log-viewer).
 
-### console.trace
+### console.trace<a id='consoletrace'></a>
 
 Adding [`console.trace`](https://developer.mozilla.org/en-US/docs/Web/API/console/trace) to your code will display the **call stack trace** right in your editor, next to the line of code with `console.trace`. The stack trace output is also displayed in the [log viewer](#log-viewer).
 
 ![tracepoints](https://camo.githubusercontent.com/2b4c8164e99b2695d65f26b50985f44a72ffcc3ec2d870ce695a9fbceb0edb93/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d636f6e736f6c6554726163652e706e67)
 
-### console.time
+### console.time<a id='consoletime'></a>
 
 Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https://developer.mozilla.org/en-US/docs/Web/API/console/time) to your code will display the time it took to execute the code between the calls right in your editor, next to the line of code with `console.timeEnd`. The time output is also displayed in the [log viewer](#log-viewer).
 
@@ -206,13 +206,13 @@ Console Ninja instrumentation is limited to sending runtime values for `console.
 
 ## Differences between Console Ninja and other tools
 
-### Quokka.js
+### Quokka.js<a id='quokkajs'></a>
 
 [Quokka.js](https://quokkajs.com/) is another awesome tool from [our team](https://wallabyjs.com/). Like Console Ninja, Quokka.js allows you to see various execution results without leaving the comfort of your editor.
 
 The fundamental difference between Console Ninja and Quokka.js is that Quokka runs new scratch files or existing code files as a self-contained program. Quokka allows you to quickly execute and iterate code in an **isolated playground** without unnecessary application execution. Console Ninja on the other hand runs within your application (started by your dev server, or test runner), and allows you to debug any **end to end scenarios within your running app**.
 
-### Wallaby.js
+### Wallaby.js<a id='wallabyjs'></a>
 
 The [Wallaby.js](https://wallabyjs.com/) tool from our team runs your JavaScript and TypeScript tests immediately as you type, highlighting results in your IDE right next to your code.
 
@@ -346,6 +346,26 @@ sheer size and complexity of the output.
 
 After clicking on a value inside a large object or using `Enter` plus navigation keys to browse the object, you can see the current property path in the breadcrumbs panel at the top of the log viewer. You can click on any of the breadcrumbs to scroll to the corresponding node and highlight it.
 
+#### Log entry filtering
+
+Adding multiple `console.log` statements, or even better, some [logpoints](#function-logpoints) may quickly result in large and hard-to-manage output. At the same time, removing log statements to limit output can be distracting and you may still need them for your debugging session.
+To address the issue, log entry filtering allows you to filter [log viewer](#log-viewer) entries by their file and/or line. For example, you may display only log entries for a specific line of code or hide entries coming from a specific file. The filtering makes it easier to quickly find and track specific log entries in scenarios with lots of logs.
+
+![tile_viewer_filter](https://github.com/wallabyjs/console-ninja/assets/979966/7131a011-7744-402b-9b7b-66b1e2f0fd65)
+
+To use the filter you need to open the log entry context menu (via the `lightbulb` icon of a selected entry, or via the `Cmd/Ctrl + .` keyboard shortcut) and select one of the available filtering commands:
+
+- The `Show entries for this file/line only` command allows you to only display entries for the selected file and line.
+- The `Show entries for this file only` command allows you to only display entries for the selected file.
+- The `Hide entries for this file/line only` command allows you to hide entries for the selected file and line.
+- The `Show entries for this file` command allows you to hide entries for the selected file.
+
+When a filter is applied, existing log entires that do not match the filter will not be visible. Any new log entries that do not match the filter (e.g. logged as a result of your code changes or as a result of interaction with your app) will also not be displayed.
+
+Once a filter is applied, the log viewer toolbar filter icon indicates that the filter is active. The filter can be cleared by selecting the `Reset Filter` log entry context menu option, or via the log viewer toolbar `Reset Filter` icon, or via the `Cmd/Ctrl + Escape` keyboard shortcut.
+
+Unlike the [output filtering](#output-filtering-pro), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
+
 #### Log entry highlighting
 
 This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
@@ -370,7 +390,7 @@ Sequential entries, including logs and errors, that are logged from the same pla
 
 ### Output Filtering Pro
 
-Console Ninja **PRO** edition includes output filtering features to make working in large projects or projects with a lot of output easier.
+Console Ninja **PRO** edition includes output filtering features to make working in large projects or projects with a lot of output easier. Unlike the [log viewer entry filtering](#log-entry-filtering), that only applies to the displayed log viewer entries, the output filtering is applied to all output, including inline output.
 
 - `Capture and display errors` setting allows configuring whether to capture and display errors in the editor and in the log viewer. This is useful when you are working on a project with a lot of reported errors and you want to focus on logs only.
 
