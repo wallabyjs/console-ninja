@@ -362,7 +362,7 @@ To use the filter you need to open the log entry context menu (via the `lightbul
 
 When a filter is applied, existing log entires that do not match the filter will not be visible. Any new log entries that do not match the filter (e.g. logged as a result of your code changes or as a result of interaction with your app) will also not be displayed.
 
-Once a filter is applied, the log viewer toolbar filter icon indicates that the filter is active. The filter can be cleared by selecting the `Reset Filter` log entry context menu option, or via the log viewer toolbar `Reset Filter` icon, or via the `Cmd/Ctrl + Escape` keyboard shortcut.
+Once a filter is applied, the log viewer toolbar filter icon indicates that the filter is active. The filter can be cleared by selecting the `Reset Filter` log entry context menu option, or via the log viewer toolbar `Reset Filter` icon, or via the `Shift + Escape` keyboard shortcut.
 
 Unlike the [output filtering](#output-filtering-pro), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
 
