@@ -114,7 +114,7 @@ Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https:
 
 ### Hover tooltip
 
-Hovering over Console Ninja output, such as logs or errors, will display more details, such as the log value, error message, and stack trace.
+Hovering over Console Ninja output, such as logs or errors, will display more details, such as the log value, timestamp, error message, and stack trace.
 
 ![hover](https://camo.githubusercontent.com/6c550401d73a3fb294976942acf6223132f2635ae9a6878c30673efb9a7f0cd7/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686f7665722e706e67)
 
@@ -142,6 +142,7 @@ The following keyboard shortcuts are supported for faster navigation:
 Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
 
 - `Clear all output` from Console Ninja, including inline output.
+- `Add Checkpoint` to add a horizontal separator between currently displayed entries and any new entries added afterwards.
 - `Toggle log entry date/time display` to show/hide date/time part of each displayed log entry.
 - `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
 - `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
@@ -272,6 +273,12 @@ In the example below:
 
 Once a breakpoint is placed and Console Ninja is ready to output some values for it, a special ⚡️ indicator is placed at the line with the breakpoint. If a breakpoint is placed and there's no special indicator visible, it means that it is placed in a location where Console Ninja cannot find anything to log (for example, on a line without executable JS/TS code).
 
+#### React hooks logging
+
+When a logpoint is placed on a line with a React hook with dependencies, Console Ninja logs the values of the dependencies that triggered the hook's callback function execution. This way you can spot the difference between current and previous hook dependency values with ease.
+
+![hooks](https://github.com/wallabyjs/console-ninja/assets/979966/6cea1765-bf5f-447f-9e9b-5bfcbbe510eb)
+
 ### Function logpoints
 
 Function logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of a function** and it's argument values, **without modifying your code**. Function logpoints are useful when you want to log the execution of a function, but do not want to insert `console.log` statements in the function body or place a logpoint on every line of the function.
@@ -319,9 +326,15 @@ To override the value logged for a line within the logged function, **inline bre
 In addition to the [hover tooltip](#hover-tooltip) features available in the **Community** edition, the **PRO** edition includes additional actions:
 
 - `Copy to Clipboard` action that copies the logged value or the error details to the clipboard. It's also available as a code action (via the editor line light-bulb).
+- `Show in Console Output` action that opens Console Ninja's [log viewer](#log-viewer) and focuses on the log entry.
+- `Highlight in Console Output` action that highlights the log entry in Console Ninja's [log viewer](#log-viewer). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
+- `Compare Side by Side With Previous Value` action that allows you to compare the current value with the previous value in the editor diff viewer.
+- `Watch Value` action that allows you to keep the value of any logged expression displayed. The feature is available for both `console.log` and [logpoints](#logpoints). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
 - `Search the Web` action that opens a web browser with the error message as a search query. This action is only available for errors. The search engine can be configured in the Console Ninja extension settings via the `console-ninja.searchUrl` setting.
 
 ![hover](https://camo.githubusercontent.com/6c550401d73a3fb294976942acf6223132f2635ae9a6878c30673efb9a7f0cd7/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686f7665722e706e67)
+
+![diff](https://github.com/wallabyjs/console-ninja/assets/979966/a9f4efc3-9fe8-4e53-acc4-f56d97fb2c62)
 
 ### Log Viewer Pro
 
@@ -339,6 +352,18 @@ your objects.
 **Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
 These features allow you to focus on specific sections of your logs without being overwhelmed by the
 sheer size and complexity of the output.
+
+#### Log entry highlighting
+
+This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
+
+![logviewerpro](https://camo.githubusercontent.com/52fb28f8e1e272d1add3c5ae0221d16008efb06b6c976ba566c222a4f6dc1a71/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686967686c69676874696e672e676966)
+
+Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
+
+`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
+
+`Clear All Log Highlights` command allows you to clear all current log entry highlights.
 
 #### Breadcrumbs
 
@@ -365,18 +390,6 @@ When a filter is applied, existing log entires that do not match the filter will
 Once a filter is applied, the log viewer toolbar filter icon indicates that the filter is active. The filter can be cleared by selecting the `Reset Filter` log entry context menu option, or via the log viewer toolbar `Reset Filter` icon, or via the `Shift + Escape` keyboard shortcut.
 
 Unlike the [output filtering](#output-filtering-pro), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
-
-#### Log entry highlighting
-
-This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
-
-![logviewerpro](https://camo.githubusercontent.com/52fb28f8e1e272d1add3c5ae0221d16008efb06b6c976ba566c222a4f6dc1a71/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686967686c69676874696e672e676966)
-
-Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
-
-`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
-
-`Clear All Log Highlights` command allows you to clear all current log entry highlights.
 
 #### Log entry grouping
 
