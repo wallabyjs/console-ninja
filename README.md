@@ -127,6 +127,8 @@ The hover tooltip also provides a few actions displayed as icons in the top righ
 
 Using the `Show Output` command displays Console Ninja's log viewer. The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focused in the log viewer.
 
+![tile_viewer](https://github.com/wallabyjs/console-ninja/assets/979966/9b760b5d-ccbf-4b8d-9538-fdf62d2e75e7)
+
 Each log entry provides summary details and is collapsed by default, providing a short preview that can be expanded (via mouse or `Arrow Right` keyboard key after it is focused) to inspect its details. Once the details are expanded, the `Enter` keyboard key can be used to enter the details keyboard selection/navigation mode; the `Esc` key can be used to exit the mode.
 
 Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
@@ -259,7 +261,7 @@ While using the `console.log` feature provides an excellent way to log expressio
 
 Console Ninja Logpoints allow you to log the value of any expression in your code, **without modifying your code**, by simply placing a VS Code breakpoint in your code. When Console Ninja is running (and the VS Code debugger is not), the breakpoint will not stop your code, but will act as a logpoint and will log the value of the expression next to your code and to the Console Ninja log viewer.
 
-![logpoints](https://camo.githubusercontent.com/6dfbef62b619208948e40c7573bcd4575411f0860100662b0a9e996253b54419/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d6c6f67706f696e74732e676966)
+![logpoints](https://github.com/wallabyjs/console-ninja/assets/979966/8fe401fd-4278-4aec-b8ce-f10f6d3a9e48)
 
 To use the feature, you may simply place a breakpoint (`F9`) on any line. If you want to be more precise about what to log on a line, you may place an **inline breakpoint** (`Shift + F9`) near/inside the expression that you would like to log.
 
@@ -283,7 +285,7 @@ When a logpoint is placed on a line with a React hook with dependencies, Console
 
 Function logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of a function** and it's argument values, **without modifying your code**. Function logpoints are useful when you want to log the execution of a function, but do not want to insert `console.log` statements in the function body or place a logpoint on every line of the function.
 
-![docs-funclogpoints](https://github.com/wallabyjs/console-ninja/assets/979966/536d1655-6bab-416b-9317-74b4ef54b18c)
+![docs-funclogpoints](https://github.com/wallabyjs/console-ninja/assets/979966/3543fecb-696d-4fec-855d-fa7903e0e53f)
 
 To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a function/method is defined. If there are multiple expressions or functions defined on a line, you may place an **inline breakpoint** (`Shift + F9`) near/inside the `function` keyword or method name, or at the start of an arrow function expression (`🔴() => ...`).
 
