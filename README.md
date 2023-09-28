@@ -40,11 +40,21 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 
 ## Current status
 
-Console Ninja is available for everyone to use for free at the moment. It's still very early days for the product, so we would appreciate if you [let us know](https://github.com/wallabyjs/console-ninja/issues) about any issues/bugs that you may find as well as any feature requests that you may have.
+Console Ninja extension comes with 2 feature sets: **Community** and **PRO**.
 
-We plan to always have a free **Community** edition available with features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. The **PRO** (paid) edition will be introduced at some point in the next few months and will have additional features that are [documented in a separate section](#pro-features). So unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
+Console Ninja **Community** feature set includes many fundamental features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. Console Ninja Community feature set is **free to use, and will always be free to use**.
 
-Before we start working on our commercial model, we will be releasing **PRO** features and making them available to everyone for a limited time. This will give you the opportunity to try out the **PRO features for free**. If you do not want to use the free **PRO** features before the paid version becomes available, you can explicitly disable them in the extension settings.
+Console Ninja **PRO** (paid) feature set includes everyting from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro) and are [documented in a separate doc section](#pro-features). Unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
+
+Console Ninja feature sets are designed and will be extended in future with the goal of providing you the best tool in the world for debugging your applications. Whether you are using the free or paid version - we will do our best to make you as productive as possible. With the **PRO** feature set, we are aiming to 10x your productivity, especially in more advanced debugging scenarios:
+
+- with larger number of logs,
+- medium and large company projects,
+- realtime value watching and diff-ing,
+- zero config code coverage powered analysis,
+- and [much more](https://console-ninja.com/pro).
+
+You may easily switch between feature sets in the extension settings, request a trial period for Console Ninja **PRO** feature set by using the "Console Ninja: Manage License" command in VS Code, and [unlock](https://account.wallabyjs.com/shop/console-ninja/buy/) the full Console Ninja **PRO** feature set by purchasing a subscription.
 
 ## Supported technologies
 
@@ -231,9 +241,7 @@ In contrast, Console Ninja runs within your application and displays **runtime l
 
 ## PRO features
 
-We plan to always have a free **Community** edition available with features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. The **PRO** (paid) edition will be introduced at some point in the next few months and will have additional features that are documented below. So unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
-
-Before we start working on our commercial model, we will be releasing **PRO** features and making them available to everyone for a limited time. This will give you the opportunity to try out the **PRO features for free**. If you do not want to use the free **PRO** features before the paid version becomes available, you can explicitly disable them in the extension settings.
+Console Ninja **PRO** feature set includes everything from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro), and are documented below.
 
 ### Watchpoints
 
