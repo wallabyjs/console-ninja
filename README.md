@@ -155,7 +155,7 @@ Additionally, the following commands (also displayed as icon buttons at the top 
 
 - `Clear all output` from Console Ninja, including inline output.
 - `Add Checkpoint` to add a horizontal separator between currently displayed entries and any new entries added afterwards.
-- `Toggle log entry date/time display` to show/hide date/time part of each displayed log entry.
+- `Change Date and Time Display Mode` to show/hide date/time part of each displayed log entry.
 - `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
 - `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
 
@@ -410,6 +410,12 @@ Sequential entries, including logs and errors, that are logged from the same pla
 #### Log entry actions
 
 - `Copy` action allows to copy selected log entry to clipboard. The action is available from the selected log entry toolbar and via `Ctrl/Cmd + C` shortcut.
+
+#### Date and time display modes
+
+- `Change Date and Time Display Mode` command to show/hide date/time part of each displayed log entry, as well as display an entry time **relative to the oldest display entry** time, or **relative to the previous entry** time. The option to instantly switch between the absolute and relative timelines can be tremendously helpful in scenarios where you need to quickly understand the time gap between log entries.
+
+![dateTimeViewerDiff](https://github.com/wallabyjs/console-ninja/assets/979966/ac1b4329-a3a5-4737-8f09-b3080e417b5e)
 
 ### Output Filtering Pro
 
