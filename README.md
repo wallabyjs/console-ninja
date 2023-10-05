@@ -69,7 +69,7 @@ Console Ninja currently supports the following tools:
   - [Angular CLI](https://angular.io/cli) and [Angular Nx](https://nx.dev/packages/angular) generated applications;
   - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module.
-- [Next.js](https://nextjs.org/), including first class support for client and server side logs.
+- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs.
 - [Remix](https://remix.run/), including first class support for client and server side logs (no errors).
 - [Nuxt](https://nuxt.com).
 - [Astro](https://astro.build), including first class support for client and server side logs (no server side errors).
