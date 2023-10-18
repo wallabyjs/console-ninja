@@ -291,7 +291,7 @@ When a logpoint is placed on a line with a React hook with dependencies, Console
 
 ### Function logpoints
 
-Function logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of a function** and it's argument values, **without modifying your code**. Function logpoints are useful when you want to log the execution of a function, but do not want to insert `console.log` statements in the function body or place a logpoint on every line of the function.
+Function logpoints are special types of Console Ninja [logpoints](#logpoints) that allow logging **every line of a function** and its argument values, **without modifying your code**. Function logpoints are useful when you want to log the execution of a function, but do not want to insert `console.log` statements in the function body or place a logpoint on every line of the function.
 
 ![docs-funclogpoints](https://github.com/wallabyjs/console-ninja/assets/979966/3543fecb-696d-4fec-855d-fa7903e0e53f)
 
