@@ -22,6 +22,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Watchpoints](#watchpoints)
   - [Logpoints](#logpoints)
   - [Function logpoints](#function-logpoints)
+  - [File Code Coverage](#file-code-coverage)
   - [Class logpoints](#class-logpoints)
   - [Hover tooltip Pro](#hover-tooltip-pro)
   - [Log Viewer Pro](#log-viewer-pro)
@@ -323,6 +324,12 @@ The `Clear all output` command can be used to reset the accumulated code coverag
 The `Toggle Uncovered Code Regions` command allows you to quickly
 highlight regions of your code that have not been executed (on lines with **gray** and **yellow** gutter
 indicators).
+
+### File code coverage
+
+To collect and display accumulated **code coverage** for all functions in a source file, you may use the `Toggle File Code Coverage` command. The coverage is displayed in the gutter of the editor, and is updated as you interact with your application or change your source code. The displayed indicators are the same as for [function logpoints](#function-logpoints).
+
+![docs-coverage](https://github.com/wallabyjs/console-ninja/assets/979966/683b15c3-be8c-4aa4-85a0-5435df82ab53)
 
 ### Class logpoints
 
