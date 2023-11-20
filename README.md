@@ -24,6 +24,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Function logpoints](#function-logpoints)
   - [File Code Coverage](#file-code-coverage)
   - [Class logpoints](#class-logpoints)
+  - [Predictive logging](#predictive-logging)
   - [Hover tooltip Pro](#hover-tooltip-pro)
   - [Log Viewer Pro](#log-viewer-pro)
   - [Filtering Pro](#output-filtering-pro)
@@ -338,6 +339,14 @@ Class logpoints are special types of Console Ninja [logpoints](#logpoints) that 
 To use the feature, you may simply place a breakpoint (`F9`) on a line of code where a `class` is defined.
 
 To override the value logged for a line within the logged function, **inline breakpoint** (`Shift + F9`) may be used near/inside a specific expression within the line.
+
+### Predictive Logging
+
+Predictive logging captures additional values based on [logpoints](#logpoints) and `console.log` usages. Lines with predicted values will display a ⚑ icon; hovering over this icon will show the captured values. Placing a logpoint on a line with a prediction will cause the values to display as if they were from a logpoint, both next to your code and in the Console Output window.
+
+By default, `console.log` will not trigger predictive logging, but can be configured to do so using the `console-ninja.allowConsoleLogToTriggerPredictions` setting. Predictive logging can also be entirely disabled using the `console-ninja.predictiveLoggingEnabled` setting.
+
+![predictive logging](https://github.com/wallabyjs/console-ninja/assets/2074089/7c53f12f-1b53-423b-9d38-c05689854721)
 
 ### Hover tooltip Pro
 
