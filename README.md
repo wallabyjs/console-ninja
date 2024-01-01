@@ -195,6 +195,8 @@ On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash
 - `node app1.js`
 - `node app2.js`
 
+If you manually manage your shell scripts then you may want to disable the automatic `PATH` appending behavior. The `console-ninja.installBinToPath` VS Code setting which is set to `true` by default allows to disable the behavior.
+
 _Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of the box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
 
 ## Troubleshooting
