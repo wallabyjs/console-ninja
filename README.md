@@ -2,7 +2,7 @@
 
 Console Ninja is a VS Code extension that displays `console.log` output and **runtime errors** directly in your editor from your running browser or node application. It's like your browser dev tools console tab or terminal output from your node app, but instead of having to context switch, values are connected to your code and displayed ergonomically in your editor.
 
-![preview](https://camo.githubusercontent.com/d4c9a4b934adecc5e4953dda8ece52f75f0264c842aa177f0edaa77dba971966/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d6d61696e2e676966)
+![docs-main](https://github.com/wallabyjs/console-ninja/assets/979966/f02ba64b-b51c-453b-899c-067a8ca09f28)
 
 ---
 
@@ -103,7 +103,7 @@ Console Ninja is designed to fit seamlessly into most typical dev workflows. Aft
 
 **\*\*\*** _Sometimes your modified code may be triggered immediately upon the (hot) reload of the app. For example, when code is located in the root of a component, it will be executed when the app (re)starts. If the modified code is not triggered by the app (re)start, then, the same way as without Console Ninja, you will need to perform your app specific actions to trigger the code execution._
 
-![overview](https://camo.githubusercontent.com/dce1ddc21801f934ed4836399e995b6a14e8ca684c159dfdc7e5f3a06895d60c/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d6f766572766965772e706e67)
+![overview](https://github.com/wallabyjs/console-ninja/assets/979966/4912c2fc-c32a-4a70-ae87-455bcb94b263)
 
 You should now be able to see logs (and errors, if any) in your editor, next to the relevant line of code. Hovering over the `console.log` or **error** value will display more details. **If you don't see the expected output, please [check Console Ninja's current status](#troubleshooting)**.
 
@@ -117,19 +117,19 @@ Adding `console.log` to your code will display the log output in your editor, ne
 
 Adding [`console.trace`](https://developer.mozilla.org/en-US/docs/Web/API/console/trace) to your code will display the **call stack trace** right in your editor, next to the line of code with `console.trace`. The stack trace output is also displayed in the [log viewer](#log-viewer).
 
-![tracepoints](https://camo.githubusercontent.com/2b4c8164e99b2695d65f26b50985f44a72ffcc3ec2d870ce695a9fbceb0edb93/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d636f6e736f6c6554726163652e706e67)
+![docs-consoleTrace](https://github.com/wallabyjs/console-ninja/assets/979966/acc24d3f-a8f9-4bb9-add7-927591e8a6a1)
 
 ### console.time<a id='consoletime'></a>
 
 Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https://developer.mozilla.org/en-US/docs/Web/API/console/time) to your code will display the time it took to execute the code between the calls right in your editor, next to the line of code with `console.timeEnd`. The time output is also displayed in the [log viewer](#log-viewer).
 
-![timepoints](https://camo.githubusercontent.com/6b3393f19364c1464869c88f9086ac7eb87afae49f72548444bfcda797255690/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d636f6e736f6c6554696d652e706e67)
+![docs-consoleTime](https://github.com/wallabyjs/console-ninja/assets/979966/de0f1035-200f-4c9b-b461-efcfae8176c1)
 
 ### Hover tooltip
 
 Hovering over Console Ninja output, such as logs or errors, will display more details, such as the log value, timestamp, error message, and stack trace.
 
-![hover](https://camo.githubusercontent.com/6c550401d73a3fb294976942acf6223132f2635ae9a6878c30673efb9a7f0cd7/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686f7665722e706e67)
+![tile_hover](https://github.com/wallabyjs/console-ninja/assets/979966/5342f05f-84d8-44b1-87ff-f681fc4c2435)
 
 The hover tooltip also provides a few actions displayed as icons in the top right corner of the widget, for example:
 
@@ -166,7 +166,7 @@ The log viewer supports search using the `Ctrl/Cmd + F` keyboard shortcut.
 
 The log viewer can be displayed in two modes, either `Beside File` and `In View`, there is a setting to configure the mode.
 
-![status](https://camo.githubusercontent.com/9ba7de9d159e4643c14268e57c395268b04644f5c45c23953243099318ab4582/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d766965772e676966)
+![docs-view](https://github.com/wallabyjs/console-ninja/assets/979966/82e0b9ca-c651-4fd7-baa3-045e84559593)
 
 In the `Beside File` mode (default, and recommended), the viewer is displayed in a new separate editor group to the left from your current editor. In this case, the view behaves like other opened editor tabs, i.e. it is visible in the `Opened Editors` in VS Code file explorer view.
 
@@ -176,7 +176,7 @@ In the `In View` mode, the viewer is displayed as VS Code side view. The view ca
 
 Console Ninja supports virtually any node application (starting from node v16.15.0), including Express, Hapi, Fastify, and custom node applications. Simply prefix your `node app.js` command with `console-ninja` and run `console-ninja node app.js` in your terminal.
 
-![shell scripts](https://camo.githubusercontent.com/18414d183ceaf7152382c1056c9afce9bb1621ea195b4cb70b3983cd5280f139/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d7368656c6c536372697074732e706e67)
+![shellScripts](https://github.com/wallabyjs/console-ninja/assets/979966/ebd5b187-0816-4b4d-bd32-708f2c0d3daf)
 
 Here are some more examples of how you may use the command:
 
@@ -201,7 +201,7 @@ _Please note: if your project uses a tool that Console Ninja [supports](#support
 
 If Console Ninja is not working for you as expected, the first thing to check is the extension status. You may see the status info by hovering over the extension icon in VS Code status bar.
 
-![status](https://camo.githubusercontent.com/a7ac9c03903ce4a4a7186b571b24f0d3e53c33e691a5c3e7091fa01fbf1ec632/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d7374617475732e6769663f763d31)
+![docs-status](https://github.com/wallabyjs/console-ninja/assets/979966/24c4cdb6-0599-4112-bee9-59e9b7b7747f)
 
 The status popup information dialog explains the current state of the tool and provides some tips on what to do next.
 
@@ -250,7 +250,7 @@ Console Ninja **PRO** feature set includes everything from the **Community** fea
 
 The `Watch Value` feature allows you to keep the value of any logged expression displayed. While opened, the value can easily be monitored for any changes made to it as a result of your code modifications or some actions in your app.
 
-![watchpoints](https://camo.githubusercontent.com/a7c25550d798e3d6f63eeb88b5a8a9fdc6947f5244d0feac2618cc26e009bc81/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d7761746368706f696e74732e676966)
+![watchpoints](https://github.com/wallabyjs/console-ninja/assets/979966/058e3e3f-01a3-43e6-84c0-4bc16b02cb5b)
 
 The `Watch Value` feature is available for both `console.log` and [logpoints](#logpoints). The feature is available from the [hover tooltip](#hover-tooltip), as a code action (via the editor line `light-bulb`) and from the editor command palette.
 
@@ -258,7 +258,7 @@ You can watch multiple values at the same time. Value widgets in the Console Out
 
 `Copy` is available from the focused widget header and via `Ctrl/Cmd + C` shortcut. Search (`Ctrl/Cmd + F`) can be used to find any specific content inside displayed values. The `Enter` key can be used on a focused value widget to enter the details keyboard selection/navigation mode; and the `Esc` key can be used to exit the mode.
 
-![watchpoints-details](https://camo.githubusercontent.com/4864eed8666db5f6d2e96d65cb4b13ac93b3122cad48a70b7d3e9b1a4c470f79/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d7761746368706f696e74732d64657461696c732e706e67)
+![watchpoints](https://github.com/wallabyjs/console-ninja/assets/979966/1413666a-ad81-4cd3-995d-6c3405c6d02f)
 
 The Console Output value widgets layout can be changed from `automatic` (default) to `manual` (with drag & drop and resize support) via the `Toggle Value Layout Mode` command (also available as at the top of the watched `Values` view). [Log Highlighting](#log-viewer-pro) is also supported for displayed values via coloring the value widget header with the same highlight color as in the log viewer and editor.
 
@@ -282,7 +282,7 @@ In the example below:
 - inline breakpoint on the line 23 outputs the value of the `e` parameter of the `onClick` button handler;
 - inline breakpoints on the line 24 and line 30 outputs the value of the `count` variable.
 
-![logpoints](https://camo.githubusercontent.com/1cf95fc3e08bb3a704725322c40bdffaa2625a862035ac2b95a2f1dc11e1fa76/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d6c6f67706f696e74732e706e67)
+![logpoints](https://github.com/wallabyjs/console-ninja/assets/979966/c2dd0691-aa5a-47e4-8ca0-1d9bb0401a8b)
 
 Once a breakpoint is placed and Console Ninja is ready to output some values for it, a special ⚡️ indicator is placed at the line with the breakpoint. If a breakpoint is placed and there's no special indicator visible, it means that it is placed in a location where Console Ninja cannot find anything to log (for example, on a line without executable JS/TS code).
 
@@ -359,7 +359,7 @@ In addition to the [hover tooltip](#hover-tooltip) features available in the **C
 - `Watch Value` action that allows you to keep the value of any logged expression displayed. The feature is available for both `console.log` and [logpoints](#logpoints). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
 - `Search the Web` action that opens a web browser with the error message as a search query. This action is only available for errors. The search engine can be configured in the Console Ninja extension settings via the `console-ninja.searchUrl` setting.
 
-![hover](https://camo.githubusercontent.com/6c550401d73a3fb294976942acf6223132f2635ae9a6878c30673efb9a7f0cd7/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686f7665722e706e67)
+![hover](https://github.com/wallabyjs/console-ninja/assets/979966/a8a700a5-5dc5-4909-b6fb-ea834a4beef3)
 
 ![diff](https://github.com/wallabyjs/console-ninja/assets/979966/a9f4efc3-9fe8-4e53-acc4-f56d97fb2c62)
 
@@ -384,7 +384,7 @@ sheer size and complexity of the output.
 
 This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
 
-![logviewerpro](https://camo.githubusercontent.com/52fb28f8e1e272d1add3c5ae0221d16008efb06b6c976ba566c222a4f6dc1a71/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d686967686c69676874696e672e676966)
+![docs-highlighting](https://github.com/wallabyjs/console-ninja/assets/979966/cf59c5b8-a765-45ce-9e05-b34f2e978d51)
 
 Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
 
@@ -422,7 +422,7 @@ Unlike the [output filtering](#output-filtering-pro), that applies to all output
 
 Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entries in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
 
-![logviewerpro](https://camo.githubusercontent.com/c3206b1560fd44367f6015acc39d4b96d42299463acdd33710048354dec115e7/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d67726f7570696e672e706e67)
+![docs-grouping](https://github.com/wallabyjs/console-ninja/assets/979966/e3688d00-a5ed-4338-bf3c-bac2602a5576)
 
 #### Log entry actions
 
@@ -446,7 +446,7 @@ Console Ninja **PRO** edition includes output filtering features to make working
   switch between multiple output sources. This integrated view of logs from all of your tools
   provides an intuitive and efficient way to understand the complete behavior of your application.
 
-![multitool](https://camo.githubusercontent.com/86dfcb6da3b7bde4591aad41857d4fbc96f471623734b943827bcb1ab4fdb804/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f74696c655f6d756c7469746f6f6c2e676966)
+![tile_multitool](https://github.com/wallabyjs/console-ninja/assets/979966/c87fcb72-35d1-4afb-9f66-b05d241acaea)
 
 - `Capture and display logs only from logpoints` setting allows configuring whether to capture and display logs from `console.log` and other `console.*` statements. This is useful when you are working on a project with a lot of `console.log` statements and you want to focus on output from your [logpoints](#logpoints) only.
 
@@ -470,7 +470,7 @@ Separate navigation actions (either to open the code only or open the log viewer
 
 Console Ninja Tracepoints allow you to trace the execution of any block of code and understand where it is being called from, **without modifying your code**. Similar to [logpoints](#logpoints), you may place a tracepoint (`Add Tracepoint` command) on any line/column, even in the middle of some expression, or next to a function parameter. When the code execution reaches the tracepoint, Console Ninja will log the **current stack trace** and the value of the expression located at the tracepoint position.
 
-![tracepoints](https://camo.githubusercontent.com/e5a68e3f390e19f8f7e3a98bd3e8ef016e87d1f805db6cd7c2311fbbb459380c/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d7472616365706f696e74732e676966)
+![docs-tracepoints](https://github.com/wallabyjs/console-ninja/assets/979966/1c91e39d-e938-4c94-8b3a-58ec53560d6a)
 
 ### Timepoints
 
@@ -478,4 +478,4 @@ Console Ninja Timepoints allow you to measure the execution time of any block of
 
 First, place a timepoint (`Add Timepoint` command) on the line where you want to start measuring the execution time. Then, place another timepoint (`Add Timepoint` command) on the line where you want to stop measuring the execution time. The timepoints will be highlighted by Console Ninja, and the execution time will be displayed next to the end timepoint and in the Console Ninja log viewer.
 
-![timepoints](https://camo.githubusercontent.com/48e9eccb80af5f2acf660dd1e2d29e1f64692af5ed3031500f9eb451325aa7d9/68747470733a2f2f636f6e736f6c652d6e696e6a612e636f6d2f696d616765732f646f63732d74696d65706f696e74732e676966)
+![docs-timepoints](https://github.com/wallabyjs/console-ninja/assets/979966/664cc01a-8cfa-4f9f-a333-fb93d568973e)
