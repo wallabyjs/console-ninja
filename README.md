@@ -288,6 +288,8 @@ In the example below:
 
 Once a breakpoint is placed and Console Ninja is ready to output some values for it, a special ⚡️ indicator is placed at the line with the breakpoint. If a breakpoint is placed and there's no special indicator visible, it means that it is placed in a location where Console Ninja cannot find anything to log (for example, on a line without executable JS/TS code).
 
+Because logpoints are VS Code breakpoints, you can remove them in bulk using the `Console Ninja: Remove all Breakpoints in File` command or the `Remove All Breakpoints` command. Please note that this second command removes all breakpoints in all files.
+
 #### React hooks logging
 
 When a logpoint is placed on a line with a React hook with dependencies, Console Ninja logs the values of the dependencies that triggered the hook's callback function execution. This way you can spot the difference between current and previous hook dependency values with ease.
