@@ -483,3 +483,13 @@ Console Ninja Timepoints allow you to measure the execution time of any block of
 First, place a timepoint (`Add Timepoint` command) on the line where you want to start measuring the execution time. Then, place another timepoint (`Add Timepoint` command) on the line where you want to stop measuring the execution time. The timepoints will be highlighted by Console Ninja, and the execution time will be displayed next to the end timepoint and in the Console Ninja log viewer.
 
 ![docs-timepoints](https://github.com/wallabyjs/console-ninja/assets/979966/664cc01a-8cfa-4f9f-a333-fb93d568973e)
+
+
+
+### console.warn, console.info, console.debug<a id='consolewarninfodebug'></a>
+
+`console.warn`, `console.info`, and `console.debug` offer functionality very
+similar to [`console trace`](#consoletrace), but also present inline values and
+log viewer location links in colors gathered from your active VS Code theme. This can help quickly identify important entries when many values are logged.
+
+![docs-consolewarninfodebug](https://github.com/wallabyjs/console-ninja/assets/2075770/90d7db1a-f144-47f0-b832-bf0946349246)
