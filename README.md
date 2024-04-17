@@ -215,6 +215,13 @@ Console Ninja integrates with locally installed tools that are building/preparin
 
 To integrate with supported tools seamlessly, Console Ninja patches your locally installed node modules. When you stop Console Ninja in the editor with the `Pause` command, all patches are removed.
 
+If after stopping Console Ninja you observe some runtime issues (such as Console Ninja websocket errors in your browser), try **clearing your build tool's cache**. Depending on your stack, the following commands should help:
+- run `rm -rf node_modules/.cache`,
+- run `rm -rf .next`,
+- run `rm -rf .angular`,
+
+If the steps above don't help, and you are not sure how to reset your build tool's cache, try re-installing node modules, this should result in your build tool creating new cache and should resolve the issue.
+
 Console Ninja detects if you are running your tool in production mode (by checking CLI flags and process environment variables). When production mode is detected, the tool will not modify your application code even if Console Ninja is running. In the (unlikely) case that you are running production builds on your local dev computer and are deploying or sharing local builds outside of your machine, we recommend running the Console Ninja `Pause` command in your editor prior to running your build to guarantee that no instrumented code ends up in your production code.
 
 Console Ninja instrumentation is limited to sending runtime values for `console.log` and errors to your locally running editor only (`localhost` hosted websocket server). The runtime data from your app is **never** sent outside of your local machine. If the code of your application is somehow instrumented by Console Ninja and then used outside of your local machine for some reason:
