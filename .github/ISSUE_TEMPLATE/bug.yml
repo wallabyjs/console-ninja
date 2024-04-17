@@ -30,7 +30,7 @@ body:
     id: dev-tool-CLI-command
     attributes:
       label: CLI command to start your dev tool
-      description: Please provide us with the EXACT CLI command you use to start your dev tool
+      description: Please provide us with the EXACT CLI command you use to start your dev tool.
     validations:
       required: true
   - type: textarea
