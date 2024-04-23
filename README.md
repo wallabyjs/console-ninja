@@ -15,12 +15,14 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [console.log](#consolelog)
   - [console.trace](#consoletrace)
   - [console.time](#consoletime)
+  - [Network logging](#network-logging)
   - [Hover tooltip](#hover-tooltip)
   - [Log viewer](#log-viewer)
   - [Universal node applications](#universal-node-applications)
 - [PRO Edition Features](#pro-features)
   - [Watchpoints](#watchpoints)
   - [Logpoints](#logpoints)
+  - [Network logging Pro](#network-logging)
   - [Function logpoints](#function-logpoints)
   - [File Code Coverage](#file-code-coverage)
   - [Class logpoints](#class-logpoints)
@@ -302,6 +304,19 @@ Because logpoints are VS Code breakpoints, you can remove them in bulk using the
 When a logpoint is placed on a line with a React hook with dependencies, Console Ninja logs the values of the dependencies that triggered the hook's callback function execution. This way you can spot the difference between current and previous hook dependency values with ease.
 
 ![hooks](https://github.com/wallabyjs/console-ninja/assets/979966/6cea1765-bf5f-447f-9e9b-5bfcbbe510eb)
+
+### Network Logging
+
+Network logging captures the details of network requests made by your application.
+Only requests related to files currently opened in your editor are logged. Both the `fetch` and `XMLHttpRequest` APIs are supported.
+
+In **community** edition the `URL`, `method` (e.g. get, post), and `status` (e.g. 200, 404, 500) are available. **PRO** edition also logs the request and response content. The `content-type` of payloads is used to determine the best way to display
+captured content (e.g. JSON content is displayed as expandable objects). Large values are automatically collapsed.
+
+![network logging](https://github.com/wallabyjs/console-ninja/assets/2075770/b36d4649-c116-4825-bd72-ff8be015cb34)
+
+Network logging can be paused using the `Toggle Network Request Logging` command or using the toggle icon in Console Output. It can also be disabled entirely in the
+Console Ninja extension settings via the `console-ninja.output.showNetworkRequests` setting.
 
 ### Function logpoints
 
