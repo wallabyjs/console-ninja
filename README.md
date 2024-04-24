@@ -231,6 +231,8 @@ Console Ninja instrumentation is limited to sending runtime values for `console.
 - in browser, it will simply do nothing if the app host is not `127.0.0.1`, `localhost`, or one of your network adapter's IP v4 addresses. To connect from a different host name, use the `console-ninja.allowedHosts` VS Code setting.
 - in node, it will fail to connect to `localhost` and will not stop your app from working.
 
+To disable Console Ninja Welcome message displayed in build tools CLI and browser that has a link to this docs section, you may use the `console-ninja.showWelcomeMessageInTools` setting in VS Code.
+
 ## Differences between Console Ninja and other tools
 
 ### Quokka.js<a id='quokkajs'></a>
