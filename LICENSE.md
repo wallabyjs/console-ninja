@@ -42,7 +42,7 @@ Individual User Subscriptions: Intended for software developers purchasing a Con
 
 Organization Subscriptions: For organizations using Console Ninja for business purposes. Organizations must purchase a subscription for each developer using Console Ninja. The same key cannot be used by multiple developers simultaneously. A subscription can be used on multiple computers for the same developer, but not simultaneously. Licenses can be transferred within the organization.
 
-Subscriptions are activated via email, requiring online access to activate and update. Offline activation keys are available only for subscriptions with an annual Subscription Period.
+Subscriptions are activated via email, requiring online access to activate and update. Offline activation keys are available only for Organization Subscriptions with an annual Subscription Period.
 
 # RESTRICTED USE DURING EVALUATION PERIOD (Applicable for Paid Version)
 
