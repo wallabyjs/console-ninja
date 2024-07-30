@@ -218,6 +218,7 @@ Console Ninja integrates with locally installed tools that are building/preparin
 To integrate with supported tools seamlessly, Console Ninja patches your locally installed node modules. When you stop Console Ninja in the editor with the `Pause` command, all patches are removed.
 
 If after stopping Console Ninja you observe some runtime issues (such as Console Ninja websocket errors in your browser), try **clearing your build tool's cache**. Depending on your stack, the following commands should help:
+
 - run `rm -rf node_modules/.cache`,
 - run `rm -rf .next`,
 - run `rm -rf .angular`,
@@ -507,8 +508,6 @@ Console Ninja Timepoints allow you to measure the execution time of any block of
 First, place a timepoint (`Add Timepoint` command) on the line where you want to start measuring the execution time. Then, place another timepoint (`Add Timepoint` command) on the line where you want to stop measuring the execution time. The timepoints will be highlighted by Console Ninja, and the execution time will be displayed next to the end timepoint and in the Console Ninja log viewer.
 
 ![docs-timepoints](https://github.com/wallabyjs/console-ninja/assets/979966/664cc01a-8cfa-4f9f-a333-fb93d568973e)
-
-
 
 ### console.warn, console.info, console.debug<a id='consolewarninfodebug'></a>
 
