@@ -48,7 +48,7 @@ Console Ninja extension comes with 2 feature sets: **Community** and **PRO**.
 
 Console Ninja **Community** feature set includes many fundamental features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. Console Ninja Community feature set is **free to use, and will always be free to use**.
 
-Console Ninja **PRO** (paid) feature set includes everyting from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro) and are [documented in a separate doc section](#pro-features). Unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
+Console Ninja **PRO** (paid) feature set includes everything from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro) and are [documented in a separate doc section](#pro-features). Unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
 
 Console Ninja feature sets are designed and will be extended in future with the goal of providing you the best tool in the world for debugging your applications. Whether you are using the free or paid version - we will do our best to make you as productive as possible. With the **PRO** feature set, we are aiming to 10x your productivity, especially in more advanced debugging scenarios:
 
@@ -229,7 +229,7 @@ Console Ninja detects if you are running your tool in production mode (by checki
 
 Console Ninja instrumentation is limited to sending runtime values for `console.log` and errors to your locally running editor only (`localhost` hosted websocket server). The runtime data from your app is **never** sent outside of your local machine. If the code of your application is somehow instrumented by Console Ninja and then used outside of your local machine for some reason:
 
-- in browser, it will simply do nothing if the app host is not `127.0.0.1`, `localhost`, or one of your network adapter's IP v4 addresses. To connect from a different host name, use the `console-ninja.allowedHosts` VS Code setting.
+- in browser, it will simply do nothing if the app host is not `127.0.0.1`, `localhost`, or one of your network adapter's IP v4 addresses. To connect from a different host name, use the `console-ninja.allowedHosts` VS Code setting. Note: the **PRO edition** also supports the use of `*` and `?` for wildcard matching (e.g. `*.example.com`), and regular expressions (e.g. `/^.*\\.example\\.com$/`).
 - in node, it will fail to connect to `localhost` and will not stop your app from working.
 
 To disable Console Ninja Welcome message displayed in build tools CLI and browser that has a link to this docs section, you may use the `console-ninja.showWelcomeMessageInTools` setting in VS Code.
