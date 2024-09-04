@@ -310,7 +310,7 @@ When a logpoint is placed on a line with a React hook with dependencies, Console
 
 ### Network Logging
 
-Network logging captures the details of network requests made by your application.
+Network logging captures the details of network requests made by your browser to your application.
 Only requests related to files currently opened in your editor are logged. Both the `fetch` and `XMLHttpRequest` APIs are supported.
 
 In **community** edition the `URL`, `method` (e.g. get, post), and `status` (e.g. 200, 404, 500) are available. **PRO** edition also logs the request and response content. The `content-type` of payloads is used to determine the best way to display
