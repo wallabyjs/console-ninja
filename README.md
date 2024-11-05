@@ -211,6 +211,10 @@ The status popup information dialog explains the current state of the tool and p
 
 Console Ninja uses a local websocket server to communicate with your editor, and **VPNs and firewalls** can interfere with this communication. If you are having connection-related issues and are connected to a VPN, try disconnecting from the VPN. If you are using a firewall, you may try **temporarily** disabling it to see if it is the cause of your problem; if so, refer to your firewall documentation to see how to identify blocked traffic and how to configure it to allow Console Ninja.
 
+### Multi-Root Workspaces
+
+If Console Ninja is not working as expected in a multi-root workspace, you can use the Console Ninja: Select Multi-Root Workspace Project command to select a specific project within the workspace to run the tool on. This allows you to target a particular project in multi-root setups, which can help ensure Console Ninja functions correctly with the intended project.
+
 ## How does it work
 
 Console Ninja integrates with locally installed tools that are building/preparing your code, and then inspects and adjusts your code (in a way that doesn't change how it executes) before it gets to the runtime (browser or node process that runs the code).
