@@ -252,10 +252,6 @@ While you may use Console Ninja to display logs from supported test runner CLIs,
 
 Wallaby not only displays logs and test errors inline (and in a separate ergonomically designed view), but is also [packed with features](https://wallabyjs.com/#features), such as inline code coverage and a time travel debugger, that provide superpowers to your current testing framework/stack, such as [Jest, Vitest, Mocha. etc.](https://wallabyjs.com/#tools)
 
-### Multi-Root Workspaces
-
-If Console Ninja is not working as expected in a multi-root workspace, use the Console Ninja: Select Multi-Root Workspace Project command to ensure the tool runs on your intended project.
-
 ### Error Lens extension
 
 [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) is a VS Code extension that provides inline output for VS Code `Problems` output window, typically **static code analysis errors** from your code linter or language service, such as a linter rule violation or TypeScript types-related error.
