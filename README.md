@@ -211,6 +211,8 @@ The status popup information dialog explains the current state of the tool and p
 
 Console Ninja uses a local websocket server to communicate with your editor, and **VPNs and firewalls** can interfere with this communication. If you are having connection-related issues and are connected to a VPN, try disconnecting from the VPN. If you are using a firewall, you may try **temporarily** disabling it to see if it is the cause of your problem; if so, refer to your firewall documentation to see how to identify blocked traffic and how to configure it to allow Console Ninja.
 
+If Console Ninja is not working as expected in a multi-root workspace, use the `Console Ninja: Select Multi-Root Workspace Project` command to ensure the tool runs on your intended project.
+
 ## How does it work
 
 Console Ninja integrates with locally installed tools that are building/preparing your code, and then inspects and adjusts your code (in a way that doesn't change how it executes) before it gets to the runtime (browser or node process that runs the code).
@@ -249,6 +251,10 @@ The [Wallaby.js](https://wallabyjs.com/) tool from our team runs your JavaScript
 While you may use Console Ninja to display logs from supported test runner CLIs, test errors are not handled by Console Ninja; this is because test errors are caught/handled by test runners themselves, and special processing is required to format and display test results.
 
 Wallaby not only displays logs and test errors inline (and in a separate ergonomically designed view), but is also [packed with features](https://wallabyjs.com/#features), such as inline code coverage and a time travel debugger, that provide superpowers to your current testing framework/stack, such as [Jest, Vitest, Mocha. etc.](https://wallabyjs.com/#tools)
+
+### Multi-Root Workspaces
+
+If Console Ninja is not working as expected in a multi-root workspace, use the Console Ninja: Select Multi-Root Workspace Project command to ensure the tool runs on your intended project.
 
 ### Error Lens extension
 
