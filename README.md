@@ -33,6 +33,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Quick Search Pro](#quick-search-pro)
   - [Tracepoints](#tracepoints)
   - [Timepoints](#timepoints)
+  - [GitHub Copilot integration](#github-copilot-integration)
 - [Troubleshooting](#troubleshooting)
 - [How does it work?](#how-does-it-work)
 - [Differences between Console Ninja and other tools](#differences-between-console-ninja-and-other-tools)
@@ -518,3 +519,89 @@ similar to [`console trace`](#consoletrace), but also present inline values and
 log viewer location links in colors gathered from your active VS Code theme. This can help quickly identify important entries when many values are logged.
 
 ![docs-consolewarninfodebug](https://github.com/wallabyjs/console-ninja/assets/2075770/90d7db1a-f144-47f0-b832-bf0946349246)
+
+### GitHub Copilot Integration
+
+The best AI model for investigating application errors is the one with the most context - provided by the user and the right tools. Console Ninja automatically equips AI with everything it needs: detailed error messages, stack traces, contextual insights, and complete log data for smarter debugging.
+
+#### How to use Console Ninja with GitHub Copilot
+
+To get started, install the [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) (which has a **free tier** for everyone) and restart VS Code. Then, click the `Investigate with AI` icon next to an application error.
+
+![copilot](https://console-ninja.com/images/copilot.gif)
+
+Console Ninja will open a new Copilot Chat to ask the AI model to investigate the error. The AI model will analyze the provided error details. The AI will analyze the provided details and may request additional context - such as source code or logs - from Console Ninja as needed.
+
+Finally, the investigation results will be displayed in the chat.
+
+In addition to the hover tooltip icon, you can also use:
+
+ - The `Console Ninja: Investigate with AI` command from the command palette
+ - The `Investigate with AI` context action from the editor lightbulb menu
+ - The `Investigate with AI` icon in the [Log Viewer](#log-viewer-pro)
+
+![copilot-log-viewer](https://console-ninja.com/images/copilot-log-viewer.png)
+
+#### How it works
+
+The Console Ninja extension registers `@console-ninja` as a Copilot chat participant. When you click the `Investigate with AI` icon, Console Ninja automatically:
+
+ - Opens a new Copilot Chat with `@console-ninja`
+ - Uses the selected AI model (when possible)
+ - Provides the model with **necessary context and a description of Console Ninja’s tools** for error investigation
+
+
+![copilot-sequence-diagram](https://console-ninja.com/images/copilot-sequence-diagram.png)
+
+The initial chat message includes:
+
+ - **Error details** (message and stack trace)
+ - **Relevant log locations**
+ - **Instructions for the AI model** on how to process the request, including what additional context it can request from Console Ninja
+
+The **AI model** can analyze the error details and **request additional context (e.g., source code, logs) from Console Ninja**. By default, Console Ninja prompts you to allow AI access to the requested context, but you can configure it to provide the context automatically.
+
+Once the model has all necessary information, it delivers the investigation results in the chat.
+
+#### Supported AI models
+
+Console Ninja currently supports the following AI models:
+- `GPT-4o` (default fallback for unsupported models)
+- `Claude Sonnet 3.5`
+- `o3-mini`
+
+If you attempt to use a model for the first time with Console Ninja, you may receive an error from Copilot indicating that the model is unavailable. In this case, try using the model in a separate chat first (e.g., send a simple "Hello" message), agree to any prompts from Copilot, and then retry with Console Ninja.
+
+#### Security and privacy considerations
+
+Before first use, VS Code will prompt you to allow Console Ninja to access Copilot models.
+
+When investigating an error, Console Ninja provides the AI model with necessary context, including:
+
+- **Error message**
+- **Stack trace**, which may contain:
+  - Absolute file paths or URLs
+  - Line and column numbers
+  - Function or variable names
+  - A single line of code for each stack entry
+- **Log locations**, which may include:
+  - Absolute file paths
+  - Line numbers
+  - Variable names
+
+After the initial request, the AI model may request additional context (e.g., source code, logs) from Console Ninja. By default, Console Ninja prompts you before granting access, showing a detailed description of what is being accessed. However, you can configure automatic access by chaning the following settings:
+
+- `console-ninja.AI.codeLoaderConsentMode`
+- `console-ninja.AI.logsLoaderConsentMode`
+
+#### Tips and tricks
+
+- The **opened chat can be used after the initial response** to continue to ask the LLM for more investigation, to use Console Ninja tools, explain results, correct the response, etc. For example, if you see that the AI model has not used the application logs for the investigation of the error, you can ask it to do so:
+  - `@console-ninja check logs for src/file.ts`
+  - `@console-ninja check logs for src/file.ts at line 10`
+
+
+- If you are using the **Copilot free tier**, please note that because Console Ninja integration sends chat messages, [limits may apply](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot). Console Ninja only sends chat messages when you request, and you may review the number of messages sent by Console Ninja on the extension page in VS Code.
+
+- If you see that the AI model is not using the provided context effectively, or is outputting errors (such as
+  `Tool multi_tool_use.parallel was not contributed`) or strange results, you may **try to re-run the chat with the same or a different AI model**.
