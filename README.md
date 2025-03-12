@@ -551,7 +551,7 @@ The Console Ninja extension registers `@console-ninja` as a Copilot chat partici
  - Provides the model with **necessary context and a description of Console Ninja’s tools** for error investigation
 
 
-![copilot-sequence-diagram](https://console-ninja.com/images/copilot-sequence-diagram.png)
+![copilot-sequence-diagram](https://console-ninja.com/images/copilot-sequence-diagram.png?v=2)
 
 The initial chat message includes:
 
