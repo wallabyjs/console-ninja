@@ -34,6 +34,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Tracepoints](#tracepoints)
   - [Timepoints](#timepoints)
   - [GitHub Copilot integration](#github-copilot-integration)
+  - [MCP Server](#mcp-server)
 - [Troubleshooting](#troubleshooting)
 - [How does it work?](#how-does-it-work)
 - [Differences between Console Ninja and other tools](#differences-between-console-ninja-and-other-tools)
@@ -536,9 +537,9 @@ Finally, the investigation results will be displayed in the chat.
 
 In addition to the hover tooltip icon, you can also use:
 
- - The `Console Ninja: Investigate with AI` command from the command palette
- - The `Investigate with AI` context action from the editor lightbulb menu
- - The `Investigate with AI` icon in the [Log Viewer](#log-viewer-pro)
+- The `Console Ninja: Investigate with AI` command from the command palette
+- The `Investigate with AI` context action from the editor lightbulb menu
+- The `Investigate with AI` icon in the [Log Viewer](#log-viewer-pro)
 
 ![copilot-log-viewer](https://console-ninja.com/images/copilot-log-viewer.png)
 
@@ -546,31 +547,21 @@ In addition to the hover tooltip icon, you can also use:
 
 The Console Ninja extension registers `@console-ninja` as a Copilot chat participant. When you click the `Investigate with AI` icon, Console Ninja automatically:
 
- - Opens a new Copilot Chat with `@console-ninja`
- - Uses the selected AI model (when possible)
- - Provides the model with **necessary context and a description of Console Ninja’s tools** for error investigation
-
+- Opens a new Copilot Chat with `@console-ninja`
+- Uses the selected AI model (when possible)
+- Provides the model with **necessary context and a description of Console Ninja’s tools** for error investigation
 
 ![copilot-sequence-diagram](https://console-ninja.com/images/copilot-sequence-diagram.png?v=2)
 
 The initial chat message includes:
 
- - **Error details** (message and stack trace)
- - **Relevant log locations**
- - **Instructions for the AI model** on how to process the request, including what additional context it can request from Console Ninja
+- **Error details** (message and stack trace)
+- **Relevant log locations**
+- **Instructions for the AI model** on how to process the request, including what additional context it can request from Console Ninja
 
 The **AI model** can analyze the error details and **request additional context (e.g., source code, logs) from Console Ninja**. By default, Console Ninja prompts you to allow AI access to the requested context, but you can configure it to provide the context automatically.
 
 Once the model has all necessary information, it delivers the investigation results in the chat.
-
-#### Supported AI models
-
-Console Ninja currently supports the following AI models:
-- `GPT-4o` (default fallback for unsupported models)
-- `Claude Sonnet 3.5`
-- `o3-mini`
-
-If you attempt to use a model for the first time with Console Ninja, you may receive an error from Copilot indicating that the model is unavailable. In this case, try using the model in a separate chat first (e.g., send a simple "Hello" message), agree to any prompts from Copilot, and then retry with Console Ninja.
 
 #### Security and privacy considerations
 
@@ -596,12 +587,166 @@ After the initial request, the AI model may request additional context (e.g., so
 
 #### Tips and tricks
 
+- If you attempt to use a model for the first time with Console Ninja, you may receive an error from Copilot indicating that the model is unavailable. In this case, try using the model in a separate chat first (e.g., send a simple "Hello" message), agree to any prompts from Copilot, and then retry with Console Ninja.
+
 - The **opened chat can be used after the initial response** to continue to ask the LLM for more investigation, to use Console Ninja tools, explain results, correct the response, etc. For example, if you see that the AI model has not used the application logs for the investigation of the error, you can ask it to do so:
+
   - `@console-ninja check logs for src/file.ts`
   - `@console-ninja check logs for src/file.ts at line 10`
-
 
 - If you are using the **Copilot free tier**, please note that because Console Ninja integration sends chat messages, [limits may apply](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot). Console Ninja only sends chat messages when you request, and you may review the number of messages sent by Console Ninja on the extension page in VS Code.
 
 - If you see that the AI model is not using the provided context effectively, or is outputting errors (such as
   `Tool multi_tool_use.parallel was not contributed`) or strange results, you may **try to re-run the chat with the same or a different AI model**.
+
+### MCP Server
+
+Console Ninja comes with a built-in [MCP server](https://modelcontextprotocol.io/introduction) that allows your editor LLM agent (Cursor, Windsurf, Cline, Roo Code, etc.) to access your app runtime logs and errors. This includes the ability to access **browser and server logs and errors** for full stack applications.
+
+![mcp](https://console-ninja.com/images/mcp.gif)
+
+You may find instructions on how to add Console Ninja MCP server to your editor LLM agent below. Alternatively, you can use `Console Ninja: Open MCP settings` command from the command palette to view the instructions in the editor.
+
+#### Cursor
+
+To add Console Ninja [MCP server to Cursor](https://docs.cursor.com/context/model-context-protocol#adding-an-mcp-server-to-cursor) for **all projects**, go to `Cursor Settings` > `Features` > `MCP` and click on the `+ Add New MCP Server` button. In the `Add MCP Server` dialog, select `Console Ninja MCP Server` from the list of available servers. Use the following settings:
+
+- **Name**: `console-ninja`
+- **Type**: `command`
+- **Command**: `node ~/.console-ninja/mcp/`
+
+To add Console Ninja MCP server to Cursor for a **specific project**, modify the `.cursor/mcp.json` file in the project to add the following entry:
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "node",
+      "args": ["~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+#### Windsurf
+
+To add Console Ninja [MCP server to Windsurf](https://docs.codeium.com/windsurf/mcp#adding-a-new-server) run `Windsurf: MCP Configuration Panel` command from the command palette and click on the `Add custom server` button. Modify the
+opened file to add the following entry:
+
+**MacOS/Linux:**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "npx",
+      "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+**Windows**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "cmd.exe",
+      "args": ["/c", "node", "%USERPROFILE%/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+After saving the file, click on the MCP icon next to the chat input field and click on the `Refresh` button.
+
+#### Cline
+
+To add Console Ninja MCP server to Cline, open Cline view with the `Cline: Focus on View` command, click on the `MCP Servers` icon, switch to the `Installed` tab, and click on the `Configure MCP Servers` button. Modify the opened file to add the following entry:
+
+**MacOS/Linux:**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "npx",
+      "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+**Windows**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "cmd.exe",
+      "args": ["/c", "node", "%USERPROFILE%/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+#### Roo Code
+
+To add Console Ninja MCP server to Roo Code, open Roo Code view, click on the `MCP Servers` icon, and click on the `Edit MCP Settings` button. Modify the opened file to add the following entry:
+
+**MacOS/Linux:**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "npx",
+      "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+**Windows**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "cmd.exe",
+      "args": ["/c", "node", "%USERPROFILE%/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+#### Other MCP clients
+
+To add Console Ninja MCP server to an MCP client that [supports the MCP protocol tools](https://modelcontextprotocol.io/clients), you need to modify the MCP client configuration file to add the following entry:
+
+**MacOS/Linux:**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "npx",
+      "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+**Windows**
+
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "cmd.exe",
+      "args": ["/c", "node", "%USERPROFILE%/.console-ninja/mcp/"]
+    }
+  }
+}
+```
