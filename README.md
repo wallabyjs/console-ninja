@@ -513,13 +513,15 @@ First, place a timepoint (`Add Timepoint` command) on the line where you want to
 
 ![docs-timepoints](https://github.com/wallabyjs/console-ninja/assets/979966/664cc01a-8cfa-4f9f-a333-fb93d568973e)
 
-### console.warn, console.info, console.debug<a id='consolewarninfodebug'></a>
+### console.warn, console.info, console.debug, $inpect rune<a id='consolewarninfodebug'></a>
 
 `console.warn`, `console.info`, and `console.debug` offer functionality very
 similar to [`console trace`](#consoletrace), but also present inline values and
 log viewer location links in colors gathered from your active VS Code theme. This can help quickly identify important entries when many values are logged.
 
 ![docs-consolewarninfodebug](https://github.com/wallabyjs/console-ninja/assets/2075770/90d7db1a-f144-47f0-b832-bf0946349246)
+
+Svelte [`$inspect`](https://svelte.dev/docs/svelte/$inspect) is a special rune that allows you to log the value of any expression. When Console Ninja is running, the `$inspect(val)` call will log the value of the expression next to your code and to the Console Ninja log viewer.
 
 ### GitHub Copilot Integration
 
