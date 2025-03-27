@@ -513,7 +513,7 @@ First, place a timepoint (`Add Timepoint` command) on the line where you want to
 
 ![docs-timepoints](https://github.com/wallabyjs/console-ninja/assets/979966/664cc01a-8cfa-4f9f-a333-fb93d568973e)
 
-### console.warn, console.info, console.debug, $inpect rune<a id='consolewarninfodebug'></a>
+### console.warn, console.info, console.debug, $inspect rune<a id='consolewarninfodebug'></a>
 
 `console.warn`, `console.info`, and `console.debug` offer functionality very
 similar to [`console trace`](#consoletrace), but also present inline values and
