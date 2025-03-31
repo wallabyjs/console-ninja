@@ -611,11 +611,18 @@ You may find instructions on how to add Console Ninja MCP server to your editor 
 
 #### Cursor
 
-To add Console Ninja [MCP server to Cursor](https://docs.cursor.com/context/model-context-protocol#adding-an-mcp-server-to-cursor) for **all projects**, go to `Cursor Settings` > `Features` > `MCP` and click on the `+ Add New MCP Server` button. In the `Add MCP Server` dialog, select `Console Ninja MCP Server` from the list of available servers. Use the following settings:
+To add Console Ninja [MCP server to Cursor](https://docs.cursor.com/context/model-context-protocol#adding-an-mcp-server-to-cursor) for **all projects**, modify the `~/.cursor/mcp.json` file in your home directory to add the following entry:
 
-- **Name**: `console-ninja`
-- **Type**: `command`
-- **Command**: `node ~/.console-ninja/mcp/`
+```json
+{
+  "mcpServers": {
+    "console-ninja": {
+      "command": "node",
+      "args": ["~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
 
 To add Console Ninja MCP server to Cursor for a **specific project**, modify the `.cursor/mcp.json` file in the project to add the following entry:
 
