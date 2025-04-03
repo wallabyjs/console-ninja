@@ -605,9 +605,87 @@ After the initial request, the AI model may request additional context (e.g., so
 
 Console Ninja comes with a built-in [MCP server](https://modelcontextprotocol.io/introduction) that allows your editor LLM agent (Cursor, Windsurf, Cline, Roo Code, etc.) to access your app runtime logs and errors. This includes the ability to access **browser and server logs and errors** for full stack applications.
 
-![mcp](https://console-ninja.com/images/mcp.gif)
+![mcp](https://console-ninja.com/images/mcp-copilot.gif)
 
 You may find instructions on how to add Console Ninja MCP server to your editor LLM agent below. Alternatively, you can use `Console Ninja: Open MCP settings` command from the command palette to view the instructions in the editor.
+
+#### Copilot Agent
+
+You may add Console Ninja MCP server to Copilot Agent by using the links below, or by modifying configuration files manually.
+
+##### One click install
+
+[VS Code on MacOS/Linux](vscode:mcp/install?%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22-c%22%2C%22node%20~%2F.console-ninja%2Fmcp%2F%22%5D%2C%22name%22%3A%22console-ninja%22%7D)
+
+[VS Code on Windows](vscode:mcp/install?%7B%22command%22%3A%22cmd.exe%22%2C%22args%22%3A%5B%22%2Fc%22%2C%22node%22%2C%22%25USERPROFILE%25%2F.console-ninja%2Fmcp%2F%22%5D%2C%22name%22%3A%22console-ninja%22%7D)
+
+[VS Code Insiders on MacOS/Linux](vscode-insiders:mcp/install?%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22-c%22%2C%22node%20~%2F.console-ninja%2Fmcp%2F%22%5D%2C%22name%22%3A%22console-ninja%22%7D)
+
+[VS Code Insiders on Windows](vscode-insiders:mcp/install?%7B%22command%22%3A%22cmd.exe%22%2C%22args%22%3A%5B%22%2Fc%22%2C%22node%22%2C%22%25USERPROFILE%25%2F.console-ninja%2Fmcp%2F%22%5D%2C%22name%22%3A%22console-ninja%22%7D)
+
+##### Manual installation
+
+To add Console Ninja MCP server to Copilot for **all projects**, modify your VS Code `settings.json` file to add the following entry:
+
+**MacOS/Linux:**
+
+```json
+{
+  ...
+  "mcp": {
+    "servers": {
+      "console-ninja": {
+        "command": "npx",
+        "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+      }
+    }
+  }
+}
+```
+
+**Windows**
+
+```json
+{
+  ...
+  "mcp": {
+    "servers": {
+      "console-ninja": {
+        "command": "cmd.exe",
+        "args": ["/c", "node", "%USERPROFILE%/.console-ninja/mcp/"]
+      }
+    }
+  }
+}
+```
+
+To add Console Ninja MCP server to Copilot for a **specific project**, modify the `.vscode/mcp.json` file in the project's folder to add the following entry:
+
+**MacOS/Linux:**
+
+```json
+{
+  "servers": {
+    "console-ninja": {
+      "command": "npx",
+      "args": ["-y", "-c", "node ~/.console-ninja/mcp/"]
+    }
+  }
+}
+```
+
+**Windows**
+
+```json
+{
+  "servers": {
+    "console-ninja": {
+      "command": "npx",
+      "args": ["/c", "node", "%USERPROFILE%/.console-ninja/mcp/"]
+    }
+  }
+}
+```
 
 #### Cursor
 
