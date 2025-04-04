@@ -600,6 +600,10 @@ After the initial request, the AI model may request additional context (e.g., so
 
 ### MCP Server
 
+**NOTE:** ✅ Console Ninja tools are already available in Copilot Agent mode, no additional setup is required. 
+
+You may still add Console Ninja MCP server if you want to use the same tools outside of Copilot Agent mode, for example in other MCP clients.
+
 Console Ninja comes with a built-in [MCP server](https://modelcontextprotocol.io/introduction) that allows your editor LLM agent (Copilot, Cursor, Windsurf, Cline, Roo Code, etc.) to access your app runtime logs and errors. This includes the ability to access **browser and server logs and errors** for full stack applications.
 
 ![mcp](https://console-ninja.com/images/mcp-copilot.gif)
