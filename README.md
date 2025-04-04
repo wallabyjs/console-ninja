@@ -582,10 +582,7 @@ When investigating an error, Console Ninja provides the AI model with necessary 
   - Line numbers
   - Variable names
 
-After the initial request, the AI model may request additional context (e.g., source code, logs) from Console Ninja. By default, Console Ninja prompts you before granting access, showing a detailed description of what is being accessed. However, you can configure automatic access by chaning the following settings:
-
-- `console-ninja.AI.codeLoaderConsentMode`
-- `console-ninja.AI.logsLoaderConsentMode`
+After the initial request, the AI model may request additional context (e.g., source code, logs) from Console Ninja. By default, Console Ninja prompts you before granting access, showing a detailed description of what is being accessed.
 
 #### Tips and tricks
 
@@ -603,7 +600,7 @@ After the initial request, the AI model may request additional context (e.g., so
 
 ### MCP Server
 
-Console Ninja comes with a built-in [MCP server](https://modelcontextprotocol.io/introduction) that allows your editor LLM agent (Cursor, Windsurf, Cline, Roo Code, etc.) to access your app runtime logs and errors. This includes the ability to access **browser and server logs and errors** for full stack applications.
+Console Ninja comes with a built-in [MCP server](https://modelcontextprotocol.io/introduction) that allows your editor LLM agent (Copilot, Cursor, Windsurf, Cline, Roo Code, etc.) to access your app runtime logs and errors. This includes the ability to access **browser and server logs and errors** for full stack applications.
 
 ![mcp](https://console-ninja.com/images/mcp-copilot.gif)
 
