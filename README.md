@@ -35,6 +35,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Timepoints](#timepoints)
   - [GitHub Copilot integration](#github-copilot-integration)
   - [MCP Server](#mcp-server)
+  - [Interactive Value Graphs](#interactive-value-graphs)
 - [Troubleshooting](#troubleshooting)
 - [How does it work?](#how-does-it-work)
 - [Differences between Console Ninja and other tools](#differences-between-console-ninja-and-other-tools)
@@ -600,7 +601,7 @@ After the initial request, the AI model may request additional context (e.g., so
 
 ### MCP Server
 
-**NOTE:** ✅ Console Ninja tools are already available in Copilot Agent mode, no additional setup is required. 
+**NOTE:** ✅ Console Ninja tools are already available in Copilot Agent mode, no additional setup is required.
 
 You may still add Console Ninja MCP server if you want to use the same tools outside of Copilot Agent mode, for example in other MCP clients.
 
@@ -824,3 +825,29 @@ To add Console Ninja MCP server to an MCP client that [supports the MCP protocol
   }
 }
 ```
+
+### Interactive Value Graphs
+
+The feature lets you visualize runtime data as structured graphs directly in your editor. It’s useful for inspecting deeply nested objects or large data sets that are hard to parse in raw text form. The graph layout adapts well to various data shapes, and you can interactively collapse or expand branches and nodes to focus on the parts that matter.
+
+![diagram](https://console-ninja.com/images/tile_diagram.gif.preview.png)
+
+#### How to use
+
+When you run your code, any complex runtime value (such as an object or array) can be visualized as a graph. A small graph icon appears when you hover over the value in the editor or access it via the context menu in the Log Viewer. Click the icon to open the graph view.
+
+You can zoom in and out of the graph using the mouse wheel or panel icons. You can also pan the graph by clicking and dragging the graph area. Holding the `Ctrl` or `Command` key while using the mouse wheel will also scroll the graph.
+
+![diagram](https://console-ninja.com/images/tile_diagram.gif)
+
+Click the `Fit View` icon to automatically scale and center the entire graph to fit within the visible area. This is helpful after a lot of navigation or expansion, so you can quickly reorient yourself and see the overall shape of the data again.
+
+#### Nodes and Edges
+
+Each node of the displayed graph represents a value — an object or array. Properties of the object or elements of the array are displayed as a list inside the node. The name of the property or index of the array is displayed on the left, and the property value on the right. If the property value is an object or array with some properties, it will be represented as a child node in the graph connected by an edge.
+
+#### Interactivity
+
+The graph is interactive, allowing you to expand or collapse nodes to explore the structure of the value. You can collapse and expand values of properties by clicking on the property value.
+
+Each node has a context menu, available via the vertical ellipses icon in the top right corner of a node. The menu displays the full path to the property node and allows you to copy the property path or the property value to the clipboard.
