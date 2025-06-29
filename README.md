@@ -703,6 +703,14 @@ To add Console Ninja MCP server to Cursor for a **specific project**, modify the
 }
 ```
 
+###### Troubleshooting Cursor MCP server
+
+If the Console Ninja MCP server isn’t working with Cursor, please do the following:
+	1.	Open the `MCP Tools` section in `Cursor Settings` and check if the Console Ninja MCP server is listed and has a green icon next to it.
+	2.	If the icon isn’t green, open the `Output` → `MCP Logs` output channel in Cursor’s bottom panel, clear the logs, toggle the MCP server, and check for any errors in the output.
+
+**Note**: If you’re using Cursor with WSL and the MCP server doesn’t start, you may need to set the full path to your WSL Node.js executable in the MCP server configuration, instead of just using `node` command.
+
 #### Windsurf
 
 To add Console Ninja [MCP server to Windsurf](https://docs.codeium.com/windsurf/mcp#adding-a-new-server) run `Windsurf: MCP Configuration Panel` command from the command palette and click on the `Add custom server` button. Modify the
