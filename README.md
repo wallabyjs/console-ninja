@@ -711,6 +711,20 @@ If the Console Ninja MCP server isn’t working with Cursor, please do the follo
 
 **Note**: If you’re using Cursor with WSL and the MCP server doesn’t start, you may need to set the full path to your WSL Node.js executable in the MCP server configuration, instead of just using `node` command.
 
+#### Claude Code
+
+To add Console Ninja MCP server to Claude Code, run the following command in the terminal:
+
+```
+claude mcp add console-ninja -s project -- npx "-y" "-c" "node ~/.console-ninja/mcp"
+```
+
+If after adding the MCP server as described above you are getting the `Connection failed: spawn node` error, then it's possible that Claude Code MCP client can not resolve your node version. In this case try replacing node with the full path to node executable in your system, for example:
+
+```
+claude mcp add console-ninja -s project -- npx "-y" "-c" "/full/path/to/node ~/.console-ninja/mcp"
+```
+
 #### Windsurf
 
 To add Console Ninja [MCP server to Windsurf](https://docs.codeium.com/windsurf/mcp#adding-a-new-server) run `Windsurf: MCP Configuration Panel` command from the command palette and click on the `Add custom server` button. Modify the
