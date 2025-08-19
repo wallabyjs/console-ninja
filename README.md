@@ -19,6 +19,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Hover tooltip](#hover-tooltip)
   - [Log viewer](#log-viewer)
   - [Universal node applications](#universal-node-applications)
+  - [Runtime Log Capture Options](#runtime-log-capture-options)
 - [PRO Edition Features](#pro-features)
   - [Watchpoints](#watchpoints)
   - [Logpoints](#logpoints)
@@ -203,6 +204,60 @@ On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash
 If you manually manage your shell scripts then you may want to disable the automatic `PATH` appending behavior. The `console-ninja.installBinToPath` VS Code setting which is set to `true` by default allows to disable the behavior.
 
 _Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of the box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
+
+### Runtime Log Capture Options
+
+Console Ninja serializes values efficiently and automatically dials back traversal when logging gets frequent or expensive. Defaults are tuned for typical dev workflows. Customize via the `console-ninja.logCaptureOptions` setting. Requires restarting the editor and your dev tool.
+
+Configure in VS Code
+
+- Open the Command Palette → `Preferences: Open Settings (JSON)`.
+- Add or update the `"console-ninja.logCaptureOptions"` object (user or workspace scope).
+- Save, then restart the editor and your dev tool (e.g., `npm run dev`).
+
+All options (with defaults)
+
+- resolveGetters: boolean (default: false)
+  - Evaluate object getters during serialization. Off to avoid side effects and overhead.
+
+- defaultLimits: object — normal traversal limits
+  - props: number (100) — max object properties traversed per node.
+  - elements: number (100) — max array/iterable elements traversed per node.
+  - strLength: number (51200) — max captured length of a single string.
+  - totalStrLength: number (51200) — max total captured string length per entry.
+  - autoExpandLimit: number (5000) — max auto-expanded properties across the tree.
+  - autoExpandMaxDepth: number (10) — max auto-expand depth for nested objects.
+
+- reducedLimits: object — stricter limits used under load
+  - Same shape as defaultLimits. Applied automatically when reduction is triggered.
+  - Defaults: props (5), elements (5), strLength (256), totalStrLength (768), autoExpandLimit (30), autoExpandMaxDepth (2).
+
+- reducePolicy: object — controls when reducedLimits activate and when windows reset
+  - perLogpoint: object — per logpoint id window
+    - reduceOnCount: number (50) — switch to reducedLimits for this id after this many hits.
+    - reduceOnAccumulatedProcessingTimeMs: number (100) — switch after accumulated processing time exceeds this many ms for this id.
+    - resetWhenQuietMs: number (500) — reset the per-id counters after this period of inactivity.
+    - resetOnProcessingTimeAverageMs: number (100) — only reset if average per-hit cost is below this threshold.
+  - global: object — across all logpoints
+    - reduceOnCount: number (1000) — switch to reducedLimits globally after this many hits.
+    - reduceOnAccumulatedProcessingTimeMs: number (300) — switch globally after accumulated processing time exceeds this many ms.
+    - resetWhenQuietMs: number (50) — reset the global counters after this period of inactivity.
+    - resetOnProcessingTimeAverageMs: number (100) — only reset if average per-hit cost is below this threshold.
+
+Behavior
+
+- Reduced limits are used if either the current logpoint or the global window has triggered reduction.
+- A per-logpoint quiet reset also clears the global window, so reductions don’t linger after inactivity with low average cost.
+
+Example configuration
+
+```json
+{
+  "console-ninja.logCaptureOptions": {
+    "resolveGetters": true
+  }
+}
+```
 
 ## Troubleshooting
 
