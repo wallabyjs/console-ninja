@@ -180,7 +180,7 @@ In the `In View` mode, the viewer is displayed as VS Code side view. The view ca
 
 ### Universal Node applications
 
-Console Ninja supports virtually any node application (starting from node v16.15.0), including Express, Hapi, Fastify, and custom node applications. Simply prefix your `node app.js` command with `console-ninja` and run `console-ninja node app.js` in your terminal.
+Console Ninja supports virtually any node application (from Node v16.15.0 onward), including Express, Hapi, Fastify, or your own custom node applications. To get started, simply prefix your `node app.js` command with `console-ninja` and run it in the VS Code integrated terminal.
 
 ![shellScripts](https://github.com/wallabyjs/console-ninja/assets/979966/ebd5b187-0816-4b4d-bd32-708f2c0d3daf)
 
@@ -193,15 +193,16 @@ Here are some more examples of how you may use the command:
 - `console-ninja npx tsx app.ts`
 - `console-ninja npx ts-node app.ts`
 
-If `console-ninja` is not available in an external terminal session after executing the `Console Ninja: Start` command from the VS Code command palette and reloading your terminal session then you may need to add `~/.console-ninja/.bin` to `PATH` manually. On Windows, depending on how you start apps, you may need to restart Explorer process or re-login to the system.
 
-On UNIX-based systems (e.g. MacOS, Linux) you may [source](https://ss64.com/bash/source.html) the `console-ninja` command for a terminal session. After that point, any commands you run in that terminal session will automatically be started with `console-ninja`. For example:
+On UNIX-based systems (e.g. MacOS, Linux) you can [source](https://ss64.com/bash/source.html) the `console-ninja` command to apply it to an entire terminal session. Once sourced, all subsequent commands in that session will automatically run with `console-ninja`:
 
 - `source console-ninja`
 - `node app1.js`
 - `node app2.js`
 
-If you manually manage your shell scripts then you may want to disable the automatic `PATH` appending behavior. The `console-ninja.installBinToPath` VS Code setting which is set to `true` by default allows to disable the behavior.
+If you would like to use `console-ninja` command in an external terminal, add `~/.console-ninja/.bin` to your `PATH` by running the `Console Ninja: Install 'console-ninja' command` from the VS Code command palette, then reload your terminal session. On Windows, depending on how you launch apps, you may need to restart the Explorer process or re-login to the system. Use the `Console Ninja: Uninstall 'console-ninja' command` from the command palette to remove `~/.console-ninja/.bin` to your `PATH`.
+
+The `console-ninja.installBinToPath` VS Code setting (default: `false`) lets Console Ninja automatically add `~/.console-ninja/.bin` to your `PATH` on first start.
 
 _Please note: if your project uses a tool that Console Ninja [supports](#supported-technologies) out of the box then you don't need to prefix your CLI commands with `console-ninja` the prefix._
 
