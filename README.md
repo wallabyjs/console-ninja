@@ -77,7 +77,7 @@ Console Ninja currently supports the following tools:
   - [Angular CLI](https://angular.io/cli) and [Angular Nx](https://nx.dev/packages/angular) generated applications;
   - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module.
-- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs (Turbopack and Next.js middleware is currently not supported).
+- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs (Next.js middleware is currently not supported).
 - [Nest.js](https://nestjs.com), if using Nest.js 10+ with [SWC](https://swc.rs/) as compiler, follow instructions of [this comment](https://github.com/wallabyjs/console-ninja/issues/220#issuecomment-1774408715).
 - [Remix](https://remix.run/), including first class support for client and server side logs (no errors).
 - [Nuxt](https://nuxt.com).
@@ -271,6 +271,23 @@ The status popup information dialog explains the current state of the tool and p
 Console Ninja uses a local websocket server to communicate with your editor, and **VPNs and firewalls** can interfere with this communication. If you are having connection-related issues and are connected to a VPN, try disconnecting from the VPN. If you are using a firewall, you may try **temporarily** disabling it to see if it is the cause of your problem; if so, refer to your firewall documentation to see how to identify blocked traffic and how to configure it to allow Console Ninja.
 
 If Console Ninja is not working as expected in a multi-root workspace, use the `Console Ninja: Select Multi-Root Workspace Project` command to ensure the tool runs on your intended project.
+
+By default, Console Ninja logs to `~/.console-ninja/trace.log`. 
+
+If you encounter issues, check this file for errors or warnings. When contacting support, please include the relevant log content (after removing any sensitive information).
+
+For more detailed logs, set the `CONSOLE_NINJA_LOG_LEVEL` environment variable to `verbose` and restart your development tool. For example:
+
+Linux/macOS (bash/zsh):
+```shell
+CONSOLE_NINJA_LOG_LEVEL="verbose" npm run dev
+```
+Windows (PowerShell):
+```pwsh
+$env:CONSOLE_NINJA_LOG_LEVEL="verbose"
+npm run dev
+```
+
 
 ## How does it work
 
