@@ -194,11 +194,20 @@ Here are some more examples of how you may use the command:
 - `console-ninja npx ts-node app.ts`
 
 
-On UNIX-based systems (e.g. MacOS, Linux) you can [source](https://ss64.com/bash/source.html) the `console-ninja` command to apply it to an entire terminal session. Once sourced, all subsequent commands in that session will automatically run with `console-ninja`:
+If you want all subsequent commands in your terminal session to run automatically with `console-ninja`, simply source/run `console-ninja` with no arguments first:
 
-- `source console-ninja`
-- `node app1.js`
-- `node app2.js`
+Linux/macOS (bash/zsh):
+```shell
+source console-ninja
+node app1.js
+node app2.js
+```
+Windows (PowerShell/Cmd):
+```pwsh
+console-ninja
+node app1.js
+node app2.js
+```
 
 If you would like to use `console-ninja` command in an external terminal, add `~/.console-ninja/.bin` to your `PATH` by running the `Console Ninja: Install 'console-ninja' command` from the VS Code command palette, then reload your terminal session. On Windows, depending on how you launch apps, you may need to restart the Explorer process or re-login to the system. Use the `Console Ninja: Uninstall 'console-ninja' command` from the command palette to remove `~/.console-ninja/.bin` to your `PATH`.
 
