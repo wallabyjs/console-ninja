@@ -77,7 +77,7 @@ Console Ninja currently supports the following tools:
   - [Angular CLI](https://angular.io/cli) and [Angular Nx](https://nx.dev/packages/angular) generated applications;
   - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module.
-- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs (Next.js middleware is currently not supported).
+- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs (Next.js middleware is currently not supported). **Turbopack** is also supported.
 - [Nest.js](https://nestjs.com), if using Nest.js 10+ with [SWC](https://swc.rs/) as compiler, follow instructions of [this comment](https://github.com/wallabyjs/console-ninja/issues/220#issuecomment-1774408715).
 - [Remix](https://remix.run/), including first class support for client and server side logs (no errors).
 - [Nuxt](https://nuxt.com).
