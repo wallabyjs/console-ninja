@@ -474,7 +474,6 @@ In addition to the [hover tooltip](#hover-tooltip) features available in the **C
 - `Highlight in Console Output` action that highlights the log entry in Console Ninja's [log viewer](#log-viewer). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
 - `Compare Side by Side With Previous Value` action that allows you to compare the current value with the previous value in the editor diff viewer.
 - `Watch Value` action that allows you to keep the value of any logged expression displayed. The feature is available for both `console.log` and [logpoints](#logpoints). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
-- `Search the Web` action that opens a web browser with the error message as a search query. This action is only available for errors. The search engine can be configured in the Console Ninja extension settings via the `console-ninja.searchUrl` setting.
 
 ![hover](https://github.com/wallabyjs/console-ninja/assets/979966/a8a700a5-5dc5-4909-b6fb-ea834a4beef3)
 
