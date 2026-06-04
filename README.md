@@ -21,7 +21,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Universal node applications](#universal-node-applications)
   - [Runtime Log Capture Options](#runtime-log-capture-options)
 - [PRO Edition Features](#pro-features)
-  - [Watchpoints](#watchpoints)
+  - [Log Map](#log-map)
   - [Logpoints](#logpoints)
   - [Network logging Pro](#network-logging)
   - [Function logpoints](#function-logpoints)
@@ -145,39 +145,11 @@ The hover tooltip also provides a few actions displayed as icons in the top righ
 
 ### Log viewer
 
-Using the `Show Output` command displays Console Ninja's log viewer. The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focused in the log viewer.
+Using the `Show Output` command opens Console Ninja's log viewer. The log viewer also appears automatically when your app produces logs or errors. Use `Disable Output Panel Auto Display` and `Enable Output Panel Auto Display` to toggle this behavior.
 
-![tile_viewer](https://github.com/wallabyjs/console-ninja/assets/979966/9b760b5d-ccbf-4b8d-9538-fdf62d2e75e7)
+The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focused in the log viewer.
 
-Each log entry provides summary details and is collapsed by default, providing a short preview that can be expanded (via mouse or `Arrow Right` keyboard key after it is focused) to inspect its details. Once the details are expanded, the `Enter` keyboard key can be used to enter the details keyboard selection/navigation mode; the `Esc` key can be used to exit the mode.
-
-Each entry preview and expanded error entry details contain clickable links to the target source code. Links that point to `http` locations are opened in the editor by downloading the file first (a setting allows `http` links to be opened in the browser instead).
-
-Similar to browser dev tools, sequential entries of a primitive type, such as `string`, `boolean` and `number`, and any errors, that are logged from the same place in the code and have the same value are grouped together and displayed as a single entry. The entry prefix indicates the number of entries in the group.
-
-The following keyboard shortcuts are supported for faster navigation:
-
-- `Arrow Up` and `Arrow Down` to navigate to the next/previous displayed entry.
-- `Home` and `End` to navigate to the first/last displayed entry.
-- `Arrow Left` to collapse focused entry details and `Ctrl/Cmd + Arrow Left` to collapse all expanded entries details.
-
-Additionally, the following commands (also displayed as icon buttons at the top of the log viewer) are available:
-
-- `Clear all output` from Console Ninja, including inline output.
-- `Add Checkpoint` to add a horizontal separator between currently displayed entries and any new entries added afterwards.
-- `Change Date and Time Display Mode` to show/hide date/time part of each displayed log entry.
-- `Toggle auto-clearing of the output on any file change`. If auto-clearing is set to `off`, log entries recorded prior to the latest file change are dimmed, and the file links hover icon is changed to indicate that the displayed position may have changed since the entry was recorded.
-- `Toggle auto-scrolling to the last log entry` when new log entries are added. If the output is manually scrolled up so that the last entry row is not visible, then auto-scrolling is paused until the output is manually scrolled to make the last entry row visible.
-
-The log viewer supports search using the `Ctrl/Cmd + F` keyboard shortcut.
-
-The log viewer can be displayed in two modes, either `Beside File` and `In View`, there is a setting to configure the mode.
-
-![docs-view](https://github.com/wallabyjs/console-ninja/assets/979966/82e0b9ca-c651-4fd7-baa3-045e84559593)
-
-In the `Beside File` mode (default, and recommended), the viewer is displayed in a new separate editor group to the left from your current editor. In this case, the view behaves like other opened editor tabs, i.e. it is visible in the `Opened Editors` in VS Code file explorer view.
-
-In the `In View` mode, the viewer is displayed as VS Code side view. The view can also be moved to another VS Code panel. The recommended position for the viewer is to the right of the VS Code `Output` view in the bottom pane of your editor.
+![tile_viewer](https://console-ninja.com/images/tile_v2-logviewer.gif)
 
 ### Universal Node applications
 
@@ -194,16 +166,18 @@ Here are some more examples of how you may use the command:
 - `console-ninja npx tsx app.ts`
 - `console-ninja npx ts-node app.ts`
 
-
 If you want all subsequent commands in your terminal session to run automatically with `console-ninja`, simply source/run `console-ninja` with no arguments first:
 
 Linux/macOS (bash/zsh):
+
 ```shell
 source console-ninja
 node app1.js
 node app2.js
 ```
+
 Windows (PowerShell/Cmd):
+
 ```pwsh
 console-ninja
 node app1.js
@@ -229,9 +203,11 @@ Configure in VS Code
 All options (with defaults)
 
 - resolveGetters: boolean (default: false)
+
   - Evaluate object getters during serialization. Off to avoid side effects and overhead.
 
 - defaultLimits: object — normal traversal limits
+
   - props: number (100) — max object properties traversed per node.
   - elements: number (100) — max array/iterable elements traversed per node.
   - strLength: number (51200) — max captured length of a single string.
@@ -240,6 +216,7 @@ All options (with defaults)
   - autoExpandMaxDepth: number (10) — max auto-expand depth for nested objects.
 
 - reducedLimits: object — stricter limits used under load
+
   - Same shape as defaultLimits. Applied automatically when reduction is triggered.
   - Defaults: props (5), elements (5), strLength (256), totalStrLength (768), autoExpandLimit (30), autoExpandMaxDepth (2).
 
@@ -282,22 +259,24 @@ Console Ninja uses a local websocket server to communicate with your editor, and
 
 If Console Ninja is not working as expected in a multi-root workspace, use the `Console Ninja: Select Multi-Root Workspace Project` command to ensure the tool runs on your intended project.
 
-By default, Console Ninja logs to `~/.console-ninja/trace.log`. 
+By default, Console Ninja logs to `~/.console-ninja/trace.log`.
 
 If you encounter issues, check this file for errors or warnings. When contacting support, please include the relevant log content (after removing any sensitive information).
 
 For more detailed logs, set the `CONSOLE_NINJA_LOG_LEVEL` environment variable to `verbose` and restart your development tool. For example:
 
 Linux/macOS (bash/zsh):
+
 ```shell
 CONSOLE_NINJA_LOG_LEVEL="verbose" npm run dev
 ```
+
 Windows (PowerShell):
+
 ```pwsh
 $env:CONSOLE_NINJA_LOG_LEVEL="verbose"
 npm run dev
 ```
-
 
 ## How does it work
 
@@ -348,21 +327,67 @@ In contrast, Console Ninja runs within your application and displays **runtime l
 
 Console Ninja **PRO** feature set includes everything from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro), and are documented below.
 
-### Watchpoints
+### Log Viewer Pro
 
-The `Watch Value` feature allows you to keep the value of any logged expression displayed. While opened, the value can easily be monitored for any changes made to it as a result of your code modifications or some actions in your app.
+In addition to the [log viewer](#log-viewer) features available in the **Community** edition, the **PRO** edition includes additional features to provide an even more powerful way to analyze complex output.
 
-![watchpoints](https://github.com/wallabyjs/console-ninja/assets/979966/058e3e3f-01a3-43e6-84c0-4bc16b02cb5b)
+![logviewerpro](https://console-ninja.com/images/tile_v2-logviewer-pro.gif)
 
-The `Watch Value` feature is available for both `console.log` and [logpoints](#logpoints). The feature is available from the [hover tooltip](#hover-tooltip), as a code action (via the editor line `light-bulb`) and from the editor command palette.
+#### Indentation guides
 
-You can watch multiple values at the same time. Value widgets in the Console Output can be closed individually (close icon or `Ctrl/Cmd + W` keyboard shortcut on a focused value) or all at once. Arrow keys can be used to navigate between displayed values.
+**Indentation guides** provide a clear visual representation of the nested structure of
+your objects.
 
-`Copy` is available from the focused widget header and via `Ctrl/Cmd + C` shortcut. Search (`Ctrl/Cmd + F`) can be used to find any specific content inside displayed values. The `Enter` key can be used on a focused value widget to enter the details keyboard selection/navigation mode; and the `Esc` key can be used to exit the mode.
+#### Expand/collapse controls
 
-![watchpoints](https://github.com/wallabyjs/console-ninja/assets/979966/1413666a-ad81-4cd3-995d-6c3405c6d02f)
+**Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
+These features allow you to focus on specific sections of your logs without being overwhelmed by the
+sheer size and complexity of the output.
 
-The Console Output value widgets layout can be changed from `automatic` (default) to `manual` (with drag & drop and resize support) via the `Toggle Value Layout Mode` command (also available as at the top of the watched `Values` view). [Log Highlighting](#log-viewer-pro) is also supported for displayed values via coloring the value widget header with the same highlight color as in the log viewer and editor.
+#### Breadcrumbs
+
+**Breadcrumbs** feature provides a quick way of navigating the nested structure of your large logged objects.
+
+After clicking on a value inside a large object or using `Enter` plus navigation keys to browse the object, you can see the current property path in the breadcrumbs panel at the top of the log viewer. You can click on any of the breadcrumbs to scroll to the corresponding node and highlight it.
+
+#### Log entry highlighting
+
+This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
+
+![docs-highlighting](https://console-ninja.com/images/tile_v2-logviewer-highlighting.gif)
+
+Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
+
+`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
+
+`Clear All Log Highlights` command allows you to clear all current log entry highlights.
+
+#### Log entry filtering
+
+Adding multiple `console.log` statements, or even better, some [logpoints](#function-logpoints) may quickly result in large and hard-to-manage output. At the same time, removing log statements to limit output can be distracting and you may still need them for your debugging session.
+To address the issue, log entry filtering allows you to filter [log viewer](#log-viewer) entries by their file and/or line.
+
+![filtering](https://console-ninja.com/images/tile_v2-filter.gif)
+
+Unlike the [output filtering](#output-filtering-pro), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
+
+#### Log entry diff view
+
+You may select any two values to compare them in a diff view.
+
+![diff](https://console-ninja.com/images/tile_v2-diff.gif)
+
+#### Date and time display modes
+
+- `Change Date and Time Display Mode` command to show/hide date/time part of each displayed log entry, as well as display an entry time **relative to the oldest display entry** time, or **relative to the previous entry** time. The option to instantly switch between the absolute and relative timelines can be tremendously helpful in scenarios where you need to quickly understand the time gap between log entries.
+
+![dateTimeViewerDiff](https://github.com/wallabyjs/console-ninja/assets/979966/ac1b4329-a3a5-4737-8f09-b3080e417b5e)
+
+### Log Map
+
+`Log Map` lets you view your app output grouped by source code location. While open, you can monitor a specific location and instantly see how its value changes as your code or app behavior changes.
+
+![logmap](https://console-ninja.com/images/tile_v2-watchpoint.gif)
 
 ### Logpoints
 
@@ -478,77 +503,6 @@ In addition to the [hover tooltip](#hover-tooltip) features available in the **C
 ![hover](https://github.com/wallabyjs/console-ninja/assets/979966/a8a700a5-5dc5-4909-b6fb-ea834a4beef3)
 
 ![diff](https://github.com/wallabyjs/console-ninja/assets/979966/a9f4efc3-9fe8-4e53-acc4-f56d97fb2c62)
-
-### Log Viewer Pro
-
-In addition to the [log viewer](#log-viewer) features available in the **Community** edition, the **PRO** edition includes additional features to provide an even more powerful way to analyze complex output.
-
-![logviewerpro](https://github.com/wallabyjs/console-ninja/assets/979966/17b1d6cb-0882-4c45-93fb-cd012ff2ed71)
-
-#### Indentation guides
-
-**Indentation guides** provide a clear visual representation of the nested structure of
-your objects.
-
-#### Expand/collapse controls
-
-**Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
-These features allow you to focus on specific sections of your logs without being overwhelmed by the
-sheer size and complexity of the output.
-
-#### Log entry highlighting
-
-This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
-
-![docs-highlighting](https://github.com/wallabyjs/console-ninja/assets/979966/cf59c5b8-a765-45ce-9e05-b34f2e978d51)
-
-Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
-
-`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
-
-`Clear All Log Highlights` command allows you to clear all current log entry highlights.
-
-#### Breadcrumbs
-
-**Breadcrumbs** feature provides a quick way of navigating the nested structure of your large logged objects.
-
-After clicking on a value inside a large object or using `Enter` plus navigation keys to browse the object, you can see the current property path in the breadcrumbs panel at the top of the log viewer. You can click on any of the breadcrumbs to scroll to the corresponding node and highlight it.
-
-#### Log entry filtering
-
-Adding multiple `console.log` statements, or even better, some [logpoints](#function-logpoints) may quickly result in large and hard-to-manage output. At the same time, removing log statements to limit output can be distracting and you may still need them for your debugging session.
-To address the issue, log entry filtering allows you to filter [log viewer](#log-viewer) entries by their file and/or line. For example, you may display only log entries for a specific line of code or hide entries coming from a specific file. The filtering makes it easier to quickly find and track specific log entries in scenarios with lots of logs.
-
-![tile_viewer_filter](https://github.com/wallabyjs/console-ninja/assets/979966/7131a011-7744-402b-9b7b-66b1e2f0fd65)
-
-To use the filter you need to open the log entry context menu (via the `lightbulb` icon of a selected entry, or via the `Cmd/Ctrl + .` keyboard shortcut) and select one of the available filtering commands:
-
-- The `Show entries for this file/line only` command allows you to only display entries for the selected file and line.
-- The `Show entries for this file only` command allows you to only display entries for the selected file.
-- The `Hide entries for this file/line only` command allows you to hide entries for the selected file and line.
-- The `Show entries for this file` command allows you to hide entries for the selected file.
-
-When a filter is applied, existing log entires that do not match the filter will not be visible. Any new log entries that do not match the filter (e.g. logged as a result of your code changes or as a result of interaction with your app) will also not be displayed.
-
-Once a filter is applied, the log viewer toolbar filter icon indicates that the filter is active. The filter can be cleared by selecting the `Reset Filter` log entry context menu option, or via the log viewer toolbar `Reset Filter` icon, or via the `Shift + Escape` keyboard shortcut.
-
-Unlike the [output filtering](#output-filtering-pro), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
-
-#### Log entry grouping
-
-Sequential entries, including logs and errors, that are logged from the same place in the code and have the same logged value are grouped together and displayed as a single entry. The entry prefix indicates the number of entries in the group. While similar Console Ninja Community edition feature only works for primitive types (just like browser dev tools), this Pro feature **works for any type of entries, including large complex objects**.
-
-![docs-grouping](https://github.com/wallabyjs/console-ninja/assets/979966/e3688d00-a5ed-4338-bf3c-bac2602a5576)
-
-#### Log entry actions
-
-- `Copy` action allows to copy selected log entry to clipboard. The action is available from the selected log entry toolbar and via `Ctrl/Cmd + C` shortcut.
-
-#### Date and time display modes
-
-- `Change Date and Time Display Mode` command to show/hide date/time part of each displayed log entry, as well as display an entry time **relative to the oldest display entry** time, or **relative to the previous entry** time. The option to instantly switch between the absolute and relative timelines can be tremendously helpful in scenarios where you need to quickly understand the time gap between log entries.
-
-![dateTimeViewerDiff](https://github.com/wallabyjs/console-ninja/assets/979966/ac1b4329-a3a5-4737-8f09-b3080e417b5e)
 
 ### Output Filtering Pro
 
@@ -787,9 +741,7 @@ To add Console Ninja MCP server to Cursor for a **specific project**, modify the
 
 ###### Troubleshooting Cursor MCP server
 
-If the Console Ninja MCP server isn’t working with Cursor, please do the following:
-	1.	Open the `MCP Tools` section in `Cursor Settings` and check if the Console Ninja MCP server is listed and has a green icon next to it.
-	2.	If the icon isn’t green, open the `Output` → `MCP Logs` output channel in Cursor’s bottom panel, clear the logs, toggle the MCP server, and check for any errors in the output.
+If the Console Ninja MCP server isn’t working with Cursor, please do the following: 1. Open the `MCP Tools` section in `Cursor Settings` and check if the Console Ninja MCP server is listed and has a green icon next to it. 2. If the icon isn’t green, open the `Output` → `MCP Logs` output channel in Cursor’s bottom panel, clear the logs, toggle the MCP server, and check for any errors in the output.
 
 **Note**: If you’re using Cursor with WSL and the MCP server doesn’t start, you may need to set the full path to your WSL Node.js executable in the MCP server configuration, instead of just using `node` command.
 
