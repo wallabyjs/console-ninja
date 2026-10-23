@@ -1,4 +1,4 @@
-This End User License Agreement ("Agreement") is a legal contract between you as an individual or business organization ("you" or "Licensee") and Wallaby Pty Ltd ACN 620 776 794 ("Licensor") for the Console Ninja software (all editions), including any associated media, printed materials and electronic documentation (the "Software").
+This End User License Agreement ("Agreement") is a legal contract between you as an individual or business organization ("you" or "Licensee") and Wallaby Pty Ltd ACN 620 776 794 ("Licensor") for the Console Ninja software, including any associated media, printed materials and electronic documentation (the "Software").
 
 By copying, downloading, accessing or otherwise using the Software, you agree to be bound by the terms of this Agreement and you represent that you are authorized to enter into this Agreement on behalf of yourself or your business organization.
 
@@ -22,21 +22,17 @@ The Software is protected by Australian Copyright Law and International Treaty p
 
 # GRANT OF LICENSE
 
-Upon your acceptance of this Agreement, Licensor grants you a limited, non-transferable, non-exclusive license to install and use the Software, whether you've chosen the free or paid version. If you've opted for the paid version, the specific terms and conditions of your license will be determined by your selected Subscription Period and User Type at the time of purchase.
+Upon your acceptance of this Agreement and purchase of a subscription, Licensor grants you a limited, non-transferable, non-exclusive license to install and use the Software during your Subscription Period. The specific terms and conditions of your license will be determined by your selected Subscription Period and User Type at the time of purchase. Use of the Software without a paid subscription is permitted only during the Evaluation Period as described below.
 
 # INTENDED USERS OF THE SOFTWARE
 
 The Software is licensed to provide a software development productivity tool. It is intended for use by programmers, and all input and output should be reviewed carefully by suitably experienced personnel that are able to review, accept or reject any modifications or recommendations provided by the Software. For the avoidance of doubt you assume responsibility for the selection of the Software to achieve your intended results, and for the installation, use and results obtained from the Software.
 
-# PRO FEATURES (Applicable for Paid Version)
+# EXPIRATION OF SUBSCRIPTION
 
-The paid edition of the Software provides access to additional features and functionalities, collectively referred to as "PRO Features". These PRO Features enhance the Software's capabilities and are exclusive to users who have opted for the paid edition. The specific details and functionalities of the PRO Features are available on the Licensor's official website or other documentation provided by the Licensor.
+Upon the expiration of your Subscription Period, if the subscription is not renewed, your right to use and access the Software will terminate immediately, and you must cease using the Software. Any functionalities, data, or settings associated with the Software may no longer be accessible or functional. It is the responsibility of the Licensee to ensure timely renewal if continued access to the Software is desired.
 
-# TERMINATION OF PRO FEATURES ACCESS (Applicable for Paid Version)
-
-Upon the expiration of your subscription term for the paid edition, if the subscription is not renewed, access to the PRO Features will be terminated immediately. Any functionalities, data, or settings associated with the PRO Features may no longer be accessible or functional. You may switch to the free feature set of the Software at any time. It is the responsibility of the Licensee to ensure timely renewal if continued access to the PRO Features is desired.
-
-# SUBSCRIPTION DETAILS (Applicable for Paid Version)
+# SUBSCRIPTION DETAILS
 
 Individual User Subscriptions: Intended for software developers purchasing a Console Ninja subscription for personal or professional use with their own funds. This subscription can be used on multiple computers but not simultaneously. Individual User Subscriptions must not be financed by organizations in any manner.
 
@@ -44,19 +40,17 @@ Organization Subscriptions: For organizations using Console Ninja for business p
 
 Subscriptions are activated via email, requiring online access to activate and update. Offline activation keys are available only for Organization Subscriptions with an annual Subscription Period.
 
-# RESTRICTED USE DURING EVALUATION PERIOD (Applicable for Paid Version)
+# RESTRICTED USE DURING EVALUATION PERIOD
 
-For the paid edition of the Software, subject to the terms of this Agreement, Licensee is granted a right to use the paid edition of the Software for evaluation purposes without charge for a period of fifteen (15) days from the date of the trial request unless otherwise specified ("Evaluation Period").
+An evaluation period is not guaranteed. Licensor may, at its sole discretion, grant or decline a request to use the Software for evaluation purposes without charge. A trial request does not itself grant any right to use the Software. If granted by Licensor, the evaluation period shall last fifteen (15) days from the date Licensor grants access, unless otherwise specified by Licensor ("Evaluation Period"), and use of the Software during that period is subject to the terms of this Agreement.
 
-Licensee's use of the paid edition of the Software during Evaluation Period shall be limited to the internal evaluation of the paid edition of the Software for the sole purpose of determining whether the paid edition of the Software meets Licensee's requirements and whether Licensee desires to continue using Software.
+Licensee's use of the Software during Evaluation Period shall be limited to the internal evaluation of the Software for the sole purpose of determining whether the Software meets Licensee's requirements and whether Licensee desires to continue using Software.
 
-Upon expiration of Evaluation Period, Licensee must purchase a Console Ninja subscription for use of the paid edition of the Software, switch to the free edition of the Software, or cease using Software.
-
-The paid edition of the Software contains a feature that will automatically switch the paid edition of the Software to the 'Community' edition of the Software upon expiration of a short period of time while the paid edition of the Software is used during Evaluation Period. Licensee may not disable, destroy, or remove this feature of the paid edition of the Software, and any attempt to do so will be in violation of this Agreement and will terminate Licensee's rights to use Software.
+Upon expiration of Evaluation Period, Licensee must purchase a Console Ninja subscription or cease using Software.
 
 # INSTALLATION OF THE SOFTWARE
 
-You may install and use the Software regardless of the edition you have selected. For those who have chosen the paid edition, your rights and obligations will be determined by your selected Subscription Period and User Type.
+You may install and use the Software with an active paid subscription or during the Evaluation Period, subject to the terms of this Agreement. Your rights and obligations under a subscription will be determined by your selected Subscription Period and User Type.
 
 # RESTRICTIONS ON USE OF THE SOFTWARE
 

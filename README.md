@@ -11,7 +11,7 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 - [Current status](#current-status)
 - [Supported technologies](#supported-technologies)
 - [Get started](#get-started)
-- Community Edition Features
+- [Features](#features)
   - [console.log](#consolelog)
   - [console.trace](#consoletrace)
   - [console.time](#consoletime)
@@ -20,20 +20,17 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
   - [Log viewer](#log-viewer)
   - [Universal node applications](#universal-node-applications)
   - [Runtime Log Capture Options](#runtime-log-capture-options)
-- [PRO Edition Features](#pro-features)
   - [Log Map](#log-map)
   - [Logpoints](#logpoints)
-  - [Network logging Pro](#network-logging)
   - [Function logpoints](#function-logpoints)
   - [File Code Coverage](#file-code-coverage)
   - [Class logpoints](#class-logpoints)
   - [Predictive logging](#predictive-logging)
-  - [Hover tooltip Pro](#hover-tooltip-pro)
-  - [Log Viewer Pro](#log-viewer-pro)
-  - [Filtering Pro](#output-filtering-pro)
-  - [Quick Search Pro](#quick-search-pro)
+  - [Output Filtering](#output-filtering)
+  - [Quick Search](#quick-search)
   - [Tracepoints](#tracepoints)
   - [Timepoints](#timepoints)
+  - [console.warn, console.info, console.debug, $inspect rune](#consolewarninfodebug)
   - [GitHub Copilot integration](#github-copilot-integration)
   - [MCP Server](#mcp-server)
   - [Interactive Value Graphs](#interactive-value-graphs)
@@ -48,21 +45,9 @@ Console Ninja is a VS Code extension that displays `console.log` output and **ru
 
 ## Current status
 
-Console Ninja extension comes with 2 feature sets: **Community** and **PRO**.
+Console Ninja requires an active paid subscription. See [pricing and subscription options](https://console-ninja.com/pricing) and use the `Console Ninja: Manage License` command in VS Code to manage your license.
 
-Console Ninja **Community** feature set includes many fundamental features such as displaying `console.log` output and runtime errors [directly in your editor](#get-started), showing all recorded logs and errors in the [log viewer](#log-viewer), etc. Console Ninja Community feature set is **free to use, and will always be free to use**.
-
-Console Ninja **PRO** (paid) feature set includes everything from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro) and are [documented in a separate doc section](#pro-features). Unless the feature is documented as being available in the **PRO** edition, it will always be available in the **Community** edition for free.
-
-Console Ninja feature sets are designed and will be extended in future with the goal of providing you the best tool in the world for debugging your applications. Whether you are using the free or paid version - we will do our best to make you as productive as possible. With the **PRO** feature set, we are aiming to 10x your productivity, especially in more advanced debugging scenarios:
-
-- with larger number of logs,
-- medium and large company projects,
-- realtime value watching and diff-ing,
-- zero config code coverage powered analysis,
-- and [much more](https://console-ninja.com/pro).
-
-You may easily switch between feature sets in the extension settings, request a trial period for Console Ninja **PRO** feature set by using the "Console Ninja: Manage License" command in VS Code, and [unlock](https://account.wallabyjs.com/shop/console-ninja/buy/) the full Console Ninja **PRO** feature set by purchasing a subscription.
+The subscription includes all [features documented below](#features), from displaying `console.log` output and runtime errors directly in your editor to logpoints, real-time value watching and comparison, and code coverage analysis.
 
 ## Supported technologies
 
@@ -77,12 +62,12 @@ Console Ninja currently supports the following tools:
   - [Angular CLI](https://angular.io/cli) and [Angular Nx](https://nx.dev/packages/angular) generated applications;
   - [Gatsby.js](https://www.gatsbyjs.com/);
   - any web applications configured to use Webpack node module.
-- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs (Next.js middleware is currently not supported). **Turbopack** (**PRO** feature) is also supported.
+- [Next.js](https://nextjs.org/), including first class support for browser and server side (Node and Edge) logs (Next.js middleware is currently not supported). **Turbopack** is also supported.
 - [Nest.js](https://nestjs.com), if using Nest.js 10+ with [SWC](https://swc.rs/) as compiler, follow instructions of [this comment](https://github.com/wallabyjs/console-ninja/issues/220#issuecomment-1774408715).
 - [Remix](https://remix.run/), including first class support for client and server side logs (no errors).
 - [Nuxt](https://nuxt.com).
 - [Astro](https://astro.build), including first class support for client and server side logs (no server side errors).
-- [React Native with Expo](https://docs.expo.dev/get-started/set-up-your-environment/), including first class support for logs in iOS and Android emulators (**PRO** feature), and Web simulator.
+- [React Native with Expo](https://docs.expo.dev/get-started/set-up-your-environment/), including first class support for logs in iOS and Android emulators, and Web simulator.
 - [Shopify Hydrogen](https://apps.shopify.com/hydrogen).
 - [Qwik](https://qwik.builder.io).
 - [Serverless Offline](https://github.com/dherault/serverless-offline).
@@ -98,7 +83,7 @@ We have designed Console Ninja in such a way that adding support for new tools i
 
 ## Get started
 
-Console Ninja is designed to fit seamlessly into most typical dev workflows. After you have installed the extension in VS Code and opened your project, you may perform the same steps you usually take:
+After installing the extension in VS Code and activating your subscription using the `Console Ninja: Manage License` command, open your project and perform the same steps you usually take:
 
 - run `npm/pnpm/yarn` script or CLI command that starts/opens your app in dev/watch/hot-reload mode **\***;
 - start making code changes, such as adding `console.log` to your code **\*\***;
@@ -116,6 +101,8 @@ You should now be able to see logs (and errors, if any) in your editor, next to 
 
 Using the `Show Output` command displays the log viewer, allowing you to explore more details and navigate between logs and code.
 
+## Features
+
 ### console.log<a id='consolelog'></a>
 
 Adding `console.log` to your code will display the log output in your editor, next to the relevant line of code. Hovering over the `console.log` value will display additional details. The log output is also displayed in the [log viewer](#log-viewer).
@@ -132,16 +119,37 @@ Adding [`console.time('some_label')` and `console.timeEnd('some_label')`](https:
 
 ![docs-consoleTime](https://github.com/wallabyjs/console-ninja/assets/979966/de0f1035-200f-4c9b-b461-efcfae8176c1)
 
+### Network Logging
+
+Network logging captures the details of network requests made by your browser to your application.
+Only requests related to files currently opened in your editor are logged. Both the `fetch` and `XMLHttpRequest` APIs are supported.
+
+Network logging captures the `URL`, `method` (e.g. get, post), `status` (e.g. 200, 404, 500), and request and response content. The `content-type` of payloads is used to determine the best way to display
+captured content (e.g. JSON content is displayed as expandable objects). Large values are automatically collapsed.
+
+![network logging](https://github.com/wallabyjs/console-ninja/assets/2075770/b36d4649-c116-4825-bd72-ff8be015cb34)
+
+Network logging can be paused using the `Toggle Network Request Logging` command or using the toggle icon in Console Output. It can also be disabled entirely in the
+Console Ninja extension settings via the `console-ninja.output.showNetworkRequests` setting.
+
 ### Hover tooltip
 
 Hovering over Console Ninja output, such as logs or errors, will display more details, such as the log value, timestamp, error message, and stack trace.
 
 ![tile_hover](https://github.com/wallabyjs/console-ninja/assets/979966/5342f05f-84d8-44b1-87ff-f681fc4c2435)
 
-The hover tooltip also provides a few actions displayed as icons in the top right corner of the widget, for example:
+The hover tooltip provides actions displayed as icons in the top right corner of the widget:
 
-- `Show in Console Output` action that opens Console Ninja's [log viewer](#log-viewer) and focuses on the log entry.
 - `Open Filtering Settings` action that opens Console Ninja's output filtering settings.
+- `Copy to Clipboard` action that copies the logged value or the error details to the clipboard. It's also available as a code action (via the editor line light-bulb).
+- `Show in Console Output` action that opens Console Ninja's [log viewer](#log-viewer) and focuses on the log entry.
+- `Highlight in Console Output` action that highlights the log entry in Console Ninja's [log viewer](#log-viewer). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
+- `Compare Side by Side With Previous Value` action that allows you to compare the current value with the previous value in the editor diff viewer.
+- `Watch Value` action that allows you to keep the value of any logged expression displayed. The feature is available for both `console.log` and [logpoints](#logpoints). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
+
+![hover](https://github.com/wallabyjs/console-ninja/assets/979966/a8a700a5-5dc5-4909-b6fb-ea834a4beef3)
+
+![diff](https://github.com/wallabyjs/console-ninja/assets/979966/a9f4efc3-9fe8-4e53-acc4-f56d97fb2c62)
 
 ### Log viewer
 
@@ -150,6 +158,58 @@ Using the `Show Output` command opens Console Ninja's log viewer. The log viewer
 The log viewer shows all recorded logs and errors from your running application in chronological order, with newer entries at the bottom. When the command is triggered on a line with a `console.log` result, the last recorded log entry is focused in the log viewer.
 
 ![tile_viewer](https://console-ninja.com/images/tile_v2-logviewer.gif)
+
+![log viewer details](https://console-ninja.com/images/tile_v2-logviewer-pro.gif)
+
+#### Indentation guides
+
+**Indentation guides** provide a clear visual representation of the nested structure of
+your objects.
+
+#### Expand/collapse controls
+
+**Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
+These features allow you to focus on specific sections of your logs without being overwhelmed by the
+sheer size and complexity of the output.
+
+#### Breadcrumbs
+
+**Breadcrumbs** feature provides a quick way of navigating the nested structure of your large logged objects.
+
+After clicking on a value inside a large object or using `Enter` plus navigation keys to browse the object, you can see the current property path in the breadcrumbs panel at the top of the log viewer. You can click on any of the breadcrumbs to scroll to the corresponding node and highlight it.
+
+#### Log entry highlighting
+
+This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
+
+![docs-highlighting](https://console-ninja.com/images/tile_v2-logviewer-highlighting.gif)
+
+Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
+
+`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
+
+`Clear All Log Highlights` command allows you to clear all current log entry highlights.
+
+#### Log entry filtering
+
+Adding multiple `console.log` statements, or even better, some [logpoints](#function-logpoints) may quickly result in large and hard-to-manage output. At the same time, removing log statements to limit output can be distracting and you may still need them for your debugging session.
+To address the issue, log entry filtering allows you to filter [log viewer](#log-viewer) entries by their file and/or line.
+
+![filtering](https://console-ninja.com/images/tile_v2-filter.gif)
+
+Unlike the [output filtering](#output-filtering), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
+
+#### Log entry diff view
+
+You may select any two values to compare them in a diff view.
+
+![diff](https://console-ninja.com/images/tile_v2-diff.gif)
+
+#### Date and time display modes
+
+- `Change Date and Time Display Mode` command to show/hide date/time part of each displayed log entry, as well as display an entry time **relative to the oldest display entry** time, or **relative to the previous entry** time. The option to instantly switch between the absolute and relative timelines can be tremendously helpful in scenarios where you need to quickly understand the time gap between log entries.
+
+![dateTimeViewerDiff](https://github.com/wallabyjs/console-ninja/assets/979966/ac1b4329-a3a5-4737-8f09-b3080e417b5e)
 
 ### Universal Node applications
 
@@ -247,142 +307,6 @@ Example configuration
 }
 ```
 
-## Troubleshooting
-
-If Console Ninja is not working for you as expected, the first thing to check is the extension status. You may see the status info by hovering over the extension icon in VS Code status bar.
-
-![docs-status](https://github.com/wallabyjs/console-ninja/assets/979966/24c4cdb6-0599-4112-bee9-59e9b7b7747f)
-
-The status popup information dialog explains the current state of the tool and provides some tips on what to do next.
-
-Console Ninja uses a local websocket server to communicate with your editor, and **VPNs and firewalls** can interfere with this communication. If you are having connection-related issues and are connected to a VPN, try disconnecting from the VPN. If you are using a firewall, you may try **temporarily** disabling it to see if it is the cause of your problem; if so, refer to your firewall documentation to see how to identify blocked traffic and how to configure it to allow Console Ninja.
-
-If Console Ninja is not working as expected in a multi-root workspace, use the `Console Ninja: Select Multi-Root Workspace Project` command to ensure the tool runs on your intended project.
-
-By default, Console Ninja logs to `~/.console-ninja/trace.log`.
-
-If you encounter issues, check this file for errors or warnings. When contacting support, please include the relevant log content (after removing any sensitive information).
-
-For more detailed logs, set the `CONSOLE_NINJA_LOG_LEVEL` environment variable to `verbose` and restart your development tool. For example:
-
-Linux/macOS (bash/zsh):
-
-```shell
-CONSOLE_NINJA_LOG_LEVEL="verbose" npm run dev
-```
-
-Windows (PowerShell):
-
-```pwsh
-$env:CONSOLE_NINJA_LOG_LEVEL="verbose"
-npm run dev
-```
-
-## How does it work
-
-Console Ninja integrates with locally installed tools that are building/preparing your code, and then inspects and adjusts your code (in a way that doesn't change how it executes) before it gets to the runtime (browser or node process that runs the code).
-
-To integrate with supported tools seamlessly, Console Ninja patches your locally installed node modules. When you stop Console Ninja in the editor with the `Pause` command, all patches are removed.
-
-If after stopping Console Ninja you observe some runtime issues (such as Console Ninja websocket errors in your browser), try **clearing your build tool's cache**. Depending on your stack, the following commands should help:
-
-- run `rm -rf node_modules/.cache`,
-- run `rm -rf .next`,
-- run `rm -rf .angular`,
-
-If the steps above don't help, and you are not sure how to reset your build tool's cache, try re-installing node modules, this should result in your build tool creating new cache and should resolve the issue.
-
-Console Ninja detects if you are running your tool in production mode (by checking CLI flags and process environment variables). When production mode is detected, the tool will not modify your application code even if Console Ninja is running. In the (unlikely) case that you are running production builds on your local dev computer **AND** are deploying or sharing local builds outside of your machine, we recommend running the Console Ninja `Pause` command in your editor prior to running your build to guarantee that no instrumented code ends up in your production code.
-
-Console Ninja instrumentation is limited to sending runtime values for `console.log` and errors to your locally running editor only (`localhost` hosted websocket server). The runtime data from your app is **never** sent outside of your local machine. If the code of your application is somehow instrumented by Console Ninja and then used outside of your local machine for some reason:
-
-- in browser, it will simply do nothing if the app host is not `127.0.0.1`, `localhost`, or one of your network adapter's IP v4 addresses. To connect from a different host name, use the `console-ninja.allowedHosts` VS Code setting. Note: the **PRO edition** also supports the use of `*` and `?` for wildcard matching (e.g. `*.example.com`), and regular expressions (e.g. `/^.*\\.example\\.com$/`).
-- in node, it will fail to connect to `localhost` and will not stop your app from working.
-
-To disable Console Ninja Welcome message displayed in build tools CLI and browser that has a link to this docs section, you may use the `console-ninja.showWelcomeMessageInTools` setting in VS Code.
-
-## Differences between Console Ninja and other tools
-
-### Quokka.js<a id='quokkajs'></a>
-
-[Quokka.js](https://quokkajs.com/) is another awesome tool from [our team](https://wallabyjs.com/). Like Console Ninja, Quokka.js allows you to see various execution results without leaving the comfort of your editor.
-
-The fundamental difference between Console Ninja and Quokka.js is that Quokka runs new scratch files or existing code files as a self-contained program. Quokka allows you to quickly execute and iterate code in an **isolated playground** without unnecessary application execution. Console Ninja on the other hand runs within your application (started by your dev server, or test runner), and allows you to debug any **end to end scenarios within your running app**.
-
-### Wallaby.js<a id='wallabyjs'></a>
-
-The [Wallaby.js](https://wallabyjs.com/) tool from our team runs your JavaScript and TypeScript tests immediately as you type, highlighting results in your IDE right next to your code.
-
-While you may use Console Ninja to display logs from supported test runner CLIs, test errors are not handled by Console Ninja; this is because test errors are caught/handled by test runners themselves, and special processing is required to format and display test results.
-
-Wallaby not only displays logs and test errors inline (and in a separate ergonomically designed view), but is also [packed with features](https://wallabyjs.com/#features), such as inline code coverage and a time travel debugger, that provide superpowers to your current testing framework/stack, such as [Jest, Vitest, Mocha. etc.](https://wallabyjs.com/#tools)
-
-### Error Lens extension
-
-[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) is a VS Code extension that provides inline output for VS Code `Problems` output window, typically **static code analysis errors** from your code linter or language service, such as a linter rule violation or TypeScript types-related error.
-
-In contrast, Console Ninja runs within your application and displays **runtime logs and errors**.
-
-## PRO features
-
-Console Ninja **PRO** feature set includes everything from the **Community** feature set as well as many additional advanced features that can be explored on [our website Pro page](https://console-ninja.com/pro), and are documented below.
-
-### Log Viewer Pro
-
-In addition to the [log viewer](#log-viewer) features available in the **Community** edition, the **PRO** edition includes additional features to provide an even more powerful way to analyze complex output.
-
-![logviewerpro](https://console-ninja.com/images/tile_v2-logviewer-pro.gif)
-
-#### Indentation guides
-
-**Indentation guides** provide a clear visual representation of the nested structure of
-your objects.
-
-#### Expand/collapse controls
-
-**Expand/collapse controls** allow you to collapse and expand nodes within nested objects.
-These features allow you to focus on specific sections of your logs without being overwhelmed by the
-sheer size and complexity of the output.
-
-#### Breadcrumbs
-
-**Breadcrumbs** feature provides a quick way of navigating the nested structure of your large logged objects.
-
-After clicking on a value inside a large object or using `Enter` plus navigation keys to browse the object, you can see the current property path in the breadcrumbs panel at the top of the log viewer. You can click on any of the breadcrumbs to scroll to the corresponding node and highlight it.
-
-#### Log entry highlighting
-
-This feature allows you to highlight [log viewer](#log-viewer) entries that are logged from the same place in your code. No need to add prefixes like `console.log('!!! HERE', obj)` to your logs any longer - highlighted entries are decorated with a visually distinct colored & numbered indicator. Highlighting makes it easier to quickly identify specific log entries in scenarios with a lot of logs.
-
-![docs-highlighting](https://console-ninja.com/images/tile_v2-logviewer-highlighting.gif)
-
-Both `console.log` statements and [logpoints](#logpoints) can be highlighted.
-
-`Toggle Log Highlight` command allows you to toggle highlighting of the current log location. The command is available from the editor command palette, from the log hover tooltip and as a code action (via the editor line light-bulb).
-
-`Clear All Log Highlights` command allows you to clear all current log entry highlights.
-
-#### Log entry filtering
-
-Adding multiple `console.log` statements, or even better, some [logpoints](#function-logpoints) may quickly result in large and hard-to-manage output. At the same time, removing log statements to limit output can be distracting and you may still need them for your debugging session.
-To address the issue, log entry filtering allows you to filter [log viewer](#log-viewer) entries by their file and/or line.
-
-![filtering](https://console-ninja.com/images/tile_v2-filter.gif)
-
-Unlike the [output filtering](#output-filtering-pro), that applies to all output (including inline output) at the time of capturing it, the log entry filtering only applies to the displayed log viewer entries. The log entry filtering also does not stop Console Ninja from capturing logs and errors, so you can still see all logged results when the filter is reset.
-
-#### Log entry diff view
-
-You may select any two values to compare them in a diff view.
-
-![diff](https://console-ninja.com/images/tile_v2-diff.gif)
-
-#### Date and time display modes
-
-- `Change Date and Time Display Mode` command to show/hide date/time part of each displayed log entry, as well as display an entry time **relative to the oldest display entry** time, or **relative to the previous entry** time. The option to instantly switch between the absolute and relative timelines can be tremendously helpful in scenarios where you need to quickly understand the time gap between log entries.
-
-![dateTimeViewerDiff](https://github.com/wallabyjs/console-ninja/assets/979966/ac1b4329-a3a5-4737-8f09-b3080e417b5e)
-
 ### Log Map
 
 `Log Map` lets you view your app output grouped by source code location. While open, you can monitor a specific location and instantly see how its value changes as your code or app behavior changes.
@@ -420,19 +344,6 @@ Because logpoints are VS Code breakpoints, you can remove them in bulk using the
 When a logpoint is placed on a line with a React hook with dependencies, Console Ninja logs the values of the dependencies that triggered the hook's callback function execution. This way you can spot the difference between current and previous hook dependency values with ease.
 
 ![hooks](https://github.com/wallabyjs/console-ninja/assets/979966/6cea1765-bf5f-447f-9e9b-5bfcbbe510eb)
-
-### Network Logging
-
-Network logging captures the details of network requests made by your browser to your application.
-Only requests related to files currently opened in your editor are logged. Both the `fetch` and `XMLHttpRequest` APIs are supported.
-
-In **community** edition the `URL`, `method` (e.g. get, post), and `status` (e.g. 200, 404, 500) are available. **PRO** edition also logs the request and response content. The `content-type` of payloads is used to determine the best way to display
-captured content (e.g. JSON content is displayed as expandable objects). Large values are automatically collapsed.
-
-![network logging](https://github.com/wallabyjs/console-ninja/assets/2075770/b36d4649-c116-4825-bd72-ff8be015cb34)
-
-Network logging can be paused using the `Toggle Network Request Logging` command or using the toggle icon in Console Output. It can also be disabled entirely in the
-Console Ninja extension settings via the `console-ninja.output.showNetworkRequests` setting.
 
 ### Function logpoints
 
@@ -490,23 +401,9 @@ By default, `console.log` will not trigger predictive logging, but can be config
 
 ![predictive logging](https://github.com/wallabyjs/console-ninja/assets/2074089/7c53f12f-1b53-423b-9d38-c05689854721)
 
-### Hover tooltip Pro
+### Output Filtering
 
-In addition to the [hover tooltip](#hover-tooltip) features available in the **Community** edition, the **PRO** edition includes additional actions:
-
-- `Copy to Clipboard` action that copies the logged value or the error details to the clipboard. It's also available as a code action (via the editor line light-bulb).
-- `Show in Console Output` action that opens Console Ninja's [log viewer](#log-viewer) and focuses on the log entry.
-- `Highlight in Console Output` action that highlights the log entry in Console Ninja's [log viewer](#log-viewer). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
-- `Compare Side by Side With Previous Value` action that allows you to compare the current value with the previous value in the editor diff viewer.
-- `Watch Value` action that allows you to keep the value of any logged expression displayed. The feature is available for both `console.log` and [logpoints](#logpoints). The feature is also available as a code action (via the editor line `light-bulb`) and from the editor command palette.
-
-![hover](https://github.com/wallabyjs/console-ninja/assets/979966/a8a700a5-5dc5-4909-b6fb-ea834a4beef3)
-
-![diff](https://github.com/wallabyjs/console-ninja/assets/979966/a9f4efc3-9fe8-4e53-acc4-f56d97fb2c62)
-
-### Output Filtering Pro
-
-Console Ninja **PRO** edition includes output filtering features to make working in large projects or projects with a lot of output easier. Unlike the [log viewer entry filtering](#log-entry-filtering), that only applies to the displayed log viewer entries, the output filtering is applied to all output, including inline output.
+Console Ninja includes output filtering features to make working in large projects or projects with a lot of output easier. Unlike the [log viewer entry filtering](#log-entry-filtering), that only applies to the displayed log viewer entries, the output filtering is applied to all output, including inline output.
 
 - `Capture and display errors` setting allows configuring whether to capture and display errors in the editor and in the log viewer. This is useful when you are working on a project with a lot of reported errors and you want to focus on logs only.
 
@@ -520,12 +417,11 @@ Console Ninja **PRO** edition includes output filtering features to make working
 
 - `Capture and display logs only from logpoints` setting allows configuring whether to capture and display logs from `console.log` and other `console.*` statements. This is useful when you are working on a project with a lot of `console.log` statements and you want to focus on output from your [logpoints](#logpoints) only.
 
-### Quick Search Pro
+### Quick Search
 
-In addition to the [log viewer search](#log-viewer) features available in the **Community** edition, the **PRO** edition provides an easy way to search
-across all of your project logs and errors with minimal distraction.
+Quick Search provides an easy way to search across all of your project logs and errors with minimal distraction.
 
-![search pro](https://github.com/wallabyjs/console-ninja/assets/979966/2f59f330-6268-4d3a-85ad-0a9a1ef77262)
+![quick search](https://github.com/wallabyjs/console-ninja/assets/979966/2f59f330-6268-4d3a-85ad-0a9a1ef77262)
 
 The `Search Logs` command allows you to search across all of your project logs and errors.
 
@@ -578,7 +474,7 @@ In addition to the hover tooltip icon, you can also use:
 
 - The `Console Ninja: Investigate with AI` command from the command palette
 - The `Investigate with AI` context action from the editor lightbulb menu
-- The `Investigate with AI` icon in the [Log Viewer](#log-viewer-pro)
+- The `Investigate with AI` icon in the [Log Viewer](#log-viewer)
 
 ![copilot-log-viewer](https://console-ninja.com/images/copilot-log-viewer.png)
 
@@ -907,3 +803,79 @@ Each node of the displayed graph represents a value — an object or array. Prop
 The graph is interactive, allowing you to expand or collapse nodes to explore the structure of the value. You can collapse and expand values of properties by clicking on the property value.
 
 Each node has a context menu, available via the vertical ellipses icon in the top right corner of a node. The menu displays the full path to the property node and allows you to copy the property path or the property value to the clipboard.
+
+## Troubleshooting
+
+If Console Ninja is not working for you as expected, the first thing to check is the extension status. You may see the status info by hovering over the extension icon in VS Code status bar.
+
+![docs-status](https://github.com/wallabyjs/console-ninja/assets/979966/24c4cdb6-0599-4112-bee9-59e9b7b7747f)
+
+The status popup information dialog explains the current state of the tool and provides some tips on what to do next.
+
+Console Ninja uses a local websocket server to communicate with your editor, and **VPNs and firewalls** can interfere with this communication. If you are having connection-related issues and are connected to a VPN, try disconnecting from the VPN. If you are using a firewall, you may try **temporarily** disabling it to see if it is the cause of your problem; if so, refer to your firewall documentation to see how to identify blocked traffic and how to configure it to allow Console Ninja.
+
+If Console Ninja is not working as expected in a multi-root workspace, use the `Console Ninja: Select Multi-Root Workspace Project` command to ensure the tool runs on your intended project.
+
+By default, Console Ninja logs to `~/.console-ninja/trace.log`.
+
+If you encounter issues, check this file for errors or warnings. When contacting support, please include the relevant log content (after removing any sensitive information).
+
+For more detailed logs, set the `CONSOLE_NINJA_LOG_LEVEL` environment variable to `verbose` and restart your development tool. For example:
+
+Linux/macOS (bash/zsh):
+
+```shell
+CONSOLE_NINJA_LOG_LEVEL="verbose" npm run dev
+```
+
+Windows (PowerShell):
+
+```pwsh
+$env:CONSOLE_NINJA_LOG_LEVEL="verbose"
+npm run dev
+```
+
+## How does it work
+
+Console Ninja integrates with locally installed tools that are building/preparing your code, and then inspects and adjusts your code (in a way that doesn't change how it executes) before it gets to the runtime (browser or node process that runs the code).
+
+To integrate with supported tools seamlessly, Console Ninja patches your locally installed node modules. When you stop Console Ninja in the editor with the `Pause` command, all patches are removed.
+
+If after stopping Console Ninja you observe some runtime issues (such as Console Ninja websocket errors in your browser), try **clearing your build tool's cache**. Depending on your stack, the following commands should help:
+
+- run `rm -rf node_modules/.cache`,
+- run `rm -rf .next`,
+- run `rm -rf .angular`,
+
+If the steps above don't help, and you are not sure how to reset your build tool's cache, try re-installing node modules, this should result in your build tool creating new cache and should resolve the issue.
+
+Console Ninja detects if you are running your tool in production mode (by checking CLI flags and process environment variables). When production mode is detected, the tool will not modify your application code even if Console Ninja is running. In the (unlikely) case that you are running production builds on your local dev computer **AND** are deploying or sharing local builds outside of your machine, we recommend running the Console Ninja `Pause` command in your editor prior to running your build to guarantee that no instrumented code ends up in your production code.
+
+Console Ninja instrumentation is limited to sending runtime values for `console.log` and errors to your locally running editor only (`localhost` hosted websocket server). The runtime data from your app is **never** sent outside of your local machine. If the code of your application is somehow instrumented by Console Ninja and then used outside of your local machine for some reason:
+
+- in browser, it will simply do nothing if the app host is not `127.0.0.1`, `localhost`, or one of your network adapter's IP v4 addresses. To connect from a different host name, use the `console-ninja.allowedHosts` VS Code setting. The setting also supports the use of `*` and `?` for wildcard matching (e.g. `*.example.com`), and regular expressions (e.g. `/^.*\\.example\\.com$/`).
+- in node, it will fail to connect to `localhost` and will not stop your app from working.
+
+To disable Console Ninja Welcome message displayed in build tools CLI and browser that has a link to this docs section, you may use the `console-ninja.showWelcomeMessageInTools` setting in VS Code.
+
+## Differences between Console Ninja and other tools
+
+### Quokka.js<a id='quokkajs'></a>
+
+[Quokka.js](https://quokkajs.com/) is another awesome tool from [our team](https://wallabyjs.com/). Like Console Ninja, Quokka.js allows you to see various execution results without leaving the comfort of your editor.
+
+The fundamental difference between Console Ninja and Quokka.js is that Quokka runs new scratch files or existing code files as a self-contained program. Quokka allows you to quickly execute and iterate code in an **isolated playground** without unnecessary application execution. Console Ninja on the other hand runs within your application (started by your dev server, or test runner), and allows you to debug any **end to end scenarios within your running app**.
+
+### Wallaby.js<a id='wallabyjs'></a>
+
+The [Wallaby.js](https://wallabyjs.com/) tool from our team runs your JavaScript and TypeScript tests immediately as you type, highlighting results in your IDE right next to your code.
+
+While you may use Console Ninja to display logs from supported test runner CLIs, test errors are not handled by Console Ninja; this is because test errors are caught/handled by test runners themselves, and special processing is required to format and display test results.
+
+Wallaby not only displays logs and test errors inline (and in a separate ergonomically designed view), but is also [packed with features](https://wallabyjs.com/#features), such as inline code coverage and a time travel debugger, that provide superpowers to your current testing framework/stack, such as [Jest, Vitest, Mocha. etc.](https://wallabyjs.com/#tools)
+
+### Error Lens extension
+
+[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) is a VS Code extension that provides inline output for VS Code `Problems` output window, typically **static code analysis errors** from your code linter or language service, such as a linter rule violation or TypeScript types-related error.
+
+In contrast, Console Ninja runs within your application and displays **runtime logs and errors**.
